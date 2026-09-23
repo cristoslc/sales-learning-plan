@@ -4,4 +4,3 @@ dist/
 .tickets/
 *.log
 .DS_Store
-.github/

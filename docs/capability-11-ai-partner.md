@@ -21,6 +21,7 @@
 |----------|--------|------|-------------|
 | [Gong Labs](https://www.gong.io/labs/) | Data essays | 10 min each | The large-scale research on what works in real sales interactions — the closest thing to evidence in a field of opinion [5]. Your AI deal-review prompts should encode these findings. |
 | [First Round Review](https://review.firstround.com/) | Articles | 15 min each | Founder-sales essays to mine for role-play scenarios and objection lists. |
+| [What Is MEDDPICC? (AI call analysis section)](https://www.ampup.ai/resources/what-is-meddpicc) — AmpUp | Article | 10 min | How AI call analysis scores deals against the framework automatically — the pattern for your own deal-review prompts. |
 
 ### Practice This
 

@@ -12,18 +12,18 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| *SPIN Selling* — Neil Rackham | Book | ~6 hrs | The research-backed questioning methodology, based on analysis of 35,000+ sales calls. The Situation→Problem→Implication→Need-payoff spine is the backbone of discovery that doesn't feel like an audit [6]. |
-| [30 Minutes to President's Club — discovery episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Word-for-word question phrasings from top sellers. Faster to absorb than the book; use together. |
+| [30 Minutes to President's Club — discovery episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Word-for-word question phrasings from top sellers. The fastest way to hear what good discovery sounds like. |
+| [How to Move from Feature Selling to Gap Selling](https://gtmnow.com/gap-selling-effective-sales/) — Keenan (Sales Hacker podcast) ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/how-to-move-from-feature-selling-to-gap-selling-keenan-sales-hacker.md)) | Podcast | 50 min | The Gap Selling author on problem-centric vs. product-centric selling — the five-section discovery structure and the gap between current and future state as the unit of diagnosis. |
 
 ### Go deeper
 
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
-| *Gap Selling* — Keenan | Book | ~5 hrs | Reframes the whole sale around the gap between current and future state; strong on why "no decision" happens. |
-| *The Challenger Sale* — Dixon & Adamson | Book | ~6 hrs | Adds teaching to questioning: bring a hypothesis about their business, use discovery to test it rather than to survey. |
+| [*SPIN Selling*](https://www.amazon.com/SPIN-Selling-Neil-Rackham/dp/0070511136) — Neil Rackham | Book | ~6 hrs | The research-backed questioning methodology, based on analysis of 35,000+ sales calls. The Situation→Problem→Implication→Need-payoff spine is the backbone of discovery that doesn't feel like an audit [6]. |
 | [Huthwaite blog](https://www.huthwaiteinternational.com/blog/author/neil-rackham) — Neil Rackham | Articles | 2 min each | The SPIN author still publishing on the research behind the method, the origins of the acronym, and why questioning skills endure. Free, from the source. |
-| [How to Move from Feature Selling to Gap Selling](https://gtmnow.com/gap-selling-effective-sales/) — Keenan (Sales Hacker podcast) ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/how-to-move-from-feature-selling-to-gap-selling-keenan-sales-hacker.md)) | Podcast | 50 min | The Gap Selling author on problem-centric vs. product-centric selling — the gap between current and future state as the unit of diagnosis. |
+| [The Challenger Sale](https://www.penguinrandomhouse.com/books/192693/) — Dixon & Adamson | Book | ~6 hrs | Adds teaching to questioning: bring a hypothesis about their business, use discovery to test it rather than to survey. |
 | [Gong Labs](https://www.gong.io/labs/) | Data essays | 10 min each | Evidence on question counts, talk ratios, and what distinguishes winning discovery calls. |
+| [First Round Review sales essays](https://review.firstround.com/) | Articles | 15 min each | Founder-led discovery stories: what to ask, what to record, and how early conversations shape the offer itself. |
 
 ### Practice This
 

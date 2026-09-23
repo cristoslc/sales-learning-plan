@@ -12,16 +12,17 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| *Sales Pitch* — April Dunford | Book | ~4 hrs | The eight-part sales narrative structure; the proposal and pitch should tell one story, and Dunford shows how positioning drives it [7]. |
-| *Founding Sales* — Kazanjy, closing & paperwork chapters | Book | ~3 hrs | The practical, founder-in-the-seat version: proposals, quotes, contracting mechanics, and keeping momentum to signature. |
+| [Positioning to Unlock Growth](https://portfolioresources.summitpartners.com/post/positioning-with-april-dunford) — April Dunford | Webinar | 60 min | The second half is effectively a masterclass on the sales narrative — how positioning becomes the story a proposal tells, with live Q&A [7]. |
+| [30 Minutes to President's Club — proposal/committee episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Tactics for multi-threading proposals and building the buyer-side business case. |
 
 ### Go deeper
 
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
-| [MEDDPICC: Paper Process guidance](https://www.closingfoundry.com/meddpicc) | Guide | 15 min | Why paper process quietly kills "ready to sign" deals, and how mutual action plans de-risk it [3]. |
-| *Never Split the Difference* — Chris Voss | Book | ~6 hrs | Useful *after* pricing conversations start appearing; tactical empathy, labeling, and calibrated questions for proposal objections [8]. |
-| [30 Minutes to President's Club — proposal/committee episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Tactics for multi-threading proposals and building the buyer-side business case. |
+| [*Sales Pitch*](https://www.aprildunford.com/books) — April Dunford | Book | ~4 hrs | The eight-part sales narrative structure; the proposal and pitch should tell one story, and Dunford shows how positioning drives it [7]. |
+| [*Founding Sales* — closing & paperwork chapters](https://www.foundingsales.com/) — Pete Kazanjy | Book chapters (free online) | ~3 hrs | The practical, founder-in-the-seat version: proposals, quotes, contracting mechanics, and keeping momentum to signature. |
+| [MEDDPICC: the complete guide (Paper Process)](https://www.closingfoundry.com/meddpicc) — Closing Foundry | Guide | 15 min | Why paper process quietly kills "ready to sign" deals, and how mutual action plans de-risk it [3]. |
+| [*Never Split the Difference*](https://www.amazon.com/Never-Split-Difference-Negotiating-As-If/dp/0062407805) — Chris Voss | Book | ~6 hrs | Useful *after* pricing conversations start appearing; tactical empathy, labeling, and calibrated questions for proposal objections [8]. |
 
 ### Practice This
 

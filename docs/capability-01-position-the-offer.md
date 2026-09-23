@@ -12,16 +12,16 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| *Obviously Awesome* — April Dunford | Book | ~4 hrs | The canonical 10-step positioning method. Written for practitioners; reads fast. Directly applicable to a one-person consultancy. |
-| [Building a Sales Story That Wins](https://saasiest.com/april-dunford-building-a-sales-story-that-wins/) — April Dunford | Talk recap | 10 min | Compresses the sales-narrative argument: positioning → pitch, value before features, "why pick us over the alternatives." Good preview before committing to the book. |
+| [Building a Sales Story That Wins](https://saasiest.com/april-dunford-building-a-sales-story-that-wins/) — April Dunford | Talk recap | 10 min | Compresses the sales-narrative argument: positioning drives the pitch, value before features, "why pick us over the alternatives." The fastest taste of the Dunford method. |
+| [Positioning to Unlock Growth](https://portfolioresources.summitpartners.com/post/positioning-with-april-dunford) — April Dunford | Webinar | 60 min | Dunford herself on the signs of a positioning problem, the five components of effective positioning, and translating positioning into a sales pitch, with Q&A. |
 
 ### Go deeper
 
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
-| *Sales Pitch* — April Dunford | Book | ~4 hrs | Turns positioning into an eight-part sales narrative. The bridge between "who we are" and "what I say on the call." |
-| [Positioning to Unlock Growth](https://portfolioresources.summitpartners.com/post/positioning-with-april-dunford) — April Dunford | Webinar | 60 min | Dunford on the signs of a positioning problem, the five components, and translating positioning into a sales pitch, with Q&A. Free. |
-| [The Challenger Sale](https://www.penguinrandomhouse.com/books/192693/) — Dixon & Adamson | Book | ~6 hrs | Why insight-led selling beats relationship-building in complex B2B; how to construct a commercial teaching point. |
+| [*Obviously Awesome*](https://www.aprildunford.com/books) — April Dunford | Book | ~4 hrs | The canonical 10-step positioning method. Written for practitioners; reads fast. Directly applicable to a one-person consultancy. |
+| [*Sales Pitch*](https://www.aprildunford.com/books) — April Dunford | Book | ~4 hrs | Turns positioning into an eight-part sales narrative. The bridge between "who we are" and "what I say on the call." |
+| [*The Challenger Sale*](https://www.penguinrandomhouse.com/books/192693/) — Dixon & Adamson | Book | ~6 hrs | Why insight-led selling beats relationship-building in complex B2B; how to construct a commercial teaching point. |
 | [10 Ways You Need to Change How You Think and Talk to Succeed at Sales](https://review.firstround.com/10-ways-you-need-to-change-how-you-think-and-talk-to-succeed-at-sales/) — First Round Review | Article | 15 min | Mindset shifts for technical founders who find "selling" foreign. |
 
 ### Practice This

@@ -13,15 +13,16 @@
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
 | [MEDDPICC Explained: A Practical Guide](https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders) — Closing Foundry | Article | 20 min | The forecast-rigor argument: qualification discipline as the basis of commit decisions, dynamic rather than point-in-time [3]. |
-| *Founding Sales* — Kazanjy, pipeline chapters | Book | ~2 hrs | The solo-operator version: simple stage definitions, CRM minimalism, and weekly pipeline review cadence. |
+| [Startup Sales Maturity Model & Founder Led Selling](https://www.youtube.com/watch?v=lAutzV21Gus) — Pete Kazanjy ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/startup-sales-maturity-model-founder-led-selling-pete-kazanjy.md)) | Video | 45 min | The stage-by-stage model with entry/exit criteria — the same discipline pipeline stages need, told from the founder's seat. |
 
 ### Go deeper
 
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
+| [*Founding Sales* — pipeline chapters](https://www.foundingsales.com/) — Pete Kazanjy | Book chapters (free online) | ~2 hrs | The solo-operator version: simple stage definitions, CRM minimalism, and weekly pipeline review cadence. |
 | *Predictable Revenue* — Aaron Ross | Book | ~5 hrs | The outbound→pipeline system classic; more relevant at scale, useful for the metrics vocabulary. |
-| [Pipedrive Academy sales pipeline course](https://academy.pipedrive.com/) | Course | ~1 hr | A short structured pass on stages, activity tracking, and deal management if you want a canned curriculum. |
 | [Gong Labs](https://www.gong.io/labs/) | Data essays | 10 min each | Evidence on deal-stall signals and forecast accuracy from real deal data. |
+| [First Round Review sales essays](https://review.firstround.com/) | Articles | 15 min each | Pipeline management from the founder's seat — including the failure modes of hiring sales help too early. |
 
 ### Practice This
 

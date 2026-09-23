@@ -12,15 +12,15 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| *The Trusted Advisor* — Maister, Green & Galford | Book | ~5 hrs | The trust framework for long-horizon client relationships; the basis for turning one project into a practice. |
 | [Being Right Isn't Enough](https://about.davidmaister.com/articles/17/12/) — David Maister | Article | 10 min | The trust equation — credibility, reliability, intimacy, low self-orientation — in the co-author's own words. Free distillation of the book's core. |
-| [30 Minutes to President's Club — multi-threading/expansion episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Tactical asks for referrals and expansion conversations that don't feel desperate. |
+| [30 Minutes to President's Club — expansion episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Tactical asks for referrals and expansion conversations that don't feel desperate. |
 
 ### Go deeper
 
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
-| [*Founding Sales* — customer-success chapters](https://www.foundingsales.com/) — Pete Kazanjy | Book (free online) | ~2 hrs | The founder's version: turning early customers into references, case studies, and a repeatable pipeline source. |
+| [*The Trusted Advisor*](https://www.amazon.com/Trusted-Advisor-David-H-Maister/dp/0684837094) — Maister, Green & Galford | Book | ~5 hrs | The trust framework for long-horizon client relationships; the basis for turning one project into a practice. |
+| [*Founding Sales* — customer-success chapters](https://www.foundingsales.com/) — Pete Kazanjy | Book chapters (free online) | ~2 hrs | The founder's version: turning early customers into references, case studies, and a repeatable pipeline source. |
 | [Maister's free podcast masterclass series](https://davidmaister.com/) — David Maister | Podcast | episodes | Maister released his advisory masterclasses free on his own site, including sessions on earning trust and managing client relationships. |
 | [First Round Review sales essays](https://review.firstround.com/) | Articles | 15 min each | Recurring, well-edited treatment of referral motions and client relationships in founder-led sales. |
 

@@ -12,16 +12,17 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| *SPIN Selling* — chapters on Implication & Need-payoff | Book chapters | ~2 hrs | The mechanics of making the status quo expensive: the magic isn't the acronym, it's building implications that make staying put costly [6]. |
 | [MEDDPICC Explained: A Practical Guide](https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders) — Closing Foundry | Article | 20 min | Includes the "Implicate the Pain" element with buyer-centered questioning and quantification of current vs. future state — and warns against turning qualification into an interrogation [3]. |
+| [How to Move from Feature Selling to Gap Selling](https://gtmnow.com/gap-selling-effective-sales/) — Keenan (Sales Hacker podcast) ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/how-to-move-from-feature-selling-to-gap-selling-keenan-sales-hacker.md)) | Podcast | 50 min | The migraine-pill exercise — same pain, wildly different willingness to pay depending on context — is the cleanest demonstration that the buyer's gap, not the features, sets the number. |
 
 ### Go deeper
 
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
-| [Gong Labs research on pricing/value conversations](https://www.gong.io/labs/) | Data essays | 10 min each | Evidence on when and how value/ROI language shows up in winning deals. |
-| *Sales Pitch* — Dunford, chapters on value | Book | ~2 hrs | Mapping differentiated value to measurable outcomes the buyer already tracks; the value story should come from positioning, not a generic ROI calculator [7]. |
-| *The Challenger Sale* — commercial teaching | Book | ~6 hrs | Constructing the insight that reframes a nuisance into a quantified business risk. |
+| [*SPIN Selling* — Implication & Need-payoff chapters](https://www.amazon.com/SPIN-Selling-Neil-Rackham/dp/0070511136) — Neil Rackham | Book chapters | ~2 hrs | The mechanics of making the status quo expensive: the magic isn't the acronym, it's building implications that make staying put costly [6]. |
+| [*Sales Pitch* — value chapters](https://www.aprildunford.com/books) — April Dunford | Book chapters | ~2 hrs | Mapping differentiated value to measurable outcomes the buyer already tracks; the value story should come from positioning, not a generic ROI calculator [7]. |
+| [The Challenger Sale — commercial teaching](https://www.penguinrandomhouse.com/books/192693/) — Dixon & Adamson | Book | ~6 hrs | Constructing the insight that reframes a nuisance into a quantified business risk. |
+| [Gong Labs research](https://www.gong.io/labs/) | Data essays | 10 min each | Evidence on when and how value/ROI language shows up in winning deals. |
 
 ### Practice This
 

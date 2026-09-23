@@ -1,0 +1,6 @@
+dist/
+.claude/
+.agents/
+.tickets/
+*.log
+.DS_Store.github/

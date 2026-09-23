@@ -12,7 +12,7 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| [30 Minutes to President's Club — prospecting episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Hyper-tactical cold-call and cold-email breakdowns. Start with any "prospecting" episode; the formats are immediately stealable. |
+| [The 30MPC Outbound Sequence — Cold Calls & Social Selling](https://www.30mpc.com/newsletter/the-30mpc-outbound-sequence-part-2-cold-calls-and-social-selling) — Cegelski & Farrokh | Article | 15 min | The complete multi-touch sequence with the exact scripts: cold email, call opener, voicemail, LinkedIn touches — and the Gong data on why channels multiply each other. Free. |
 | [Startup Sales Maturity Model & Founder Led Selling](https://www.youtube.com/watch?v=lAutzV21Gus) — Pete Kazanjy ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/startup-sales-maturity-model-founder-led-selling-pete-kazanjy.md)) | Video | 45 min | Kazanjy's deck-as-talk on the founder-led sales motion end to end — the stages, the anti-patterns, and where outbound fits, from the author of Founding Sales. |
 
 ### Go deeper
@@ -20,6 +20,7 @@
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
 | [*Founding Sales*](https://www.foundingsales.com/) — Pete Kazanjy | Book (free online) | ~6 hrs | The early-stage outbound bible, free online (registration), searchable chapter by chapter. If you only read two chapters, make them list-building and first-touch messaging. |
+| [30 Minutes to President's Club — prospecting episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Hyper-tactical cold-call and cold-email breakdowns; the formats are immediately stealable. |
 | [First Round Review sales essays](https://review.firstround.com/) — First Round Review | Article collection | 15 min each | Repeated, well-edited coverage of the founder-as-salesperson motion, including when to keep it and when to hand off. |
 | [Gong Labs research](https://www.gong.io/labs/) — Gong | Data essays | 10 min each | What actually correlates with replies and wins across millions of recorded interactions — message structure and talk-ratio findings. Useful for de-guessing. |
 | *Fanatical Prospecting* — Jeb Blount | Book | ~6 hrs | Pipeline discipline and the psychology of consistent daily outreach, when volume is your problem rather than messaging. |

@@ -24,6 +24,7 @@
 | [The Challenger Sale](https://www.penguinrandomhouse.com/books/192693/) — Dixon & Adamson | Book | ~6 hrs | Adds teaching to questioning: bring a hypothesis about their business, use discovery to test it rather than to survey. |
 | [Gong Labs](https://www.gong.io/labs/) | Data essays | 10 min each | Evidence on question counts, talk ratios, and what distinguishes winning discovery calls. |
 | [First Round Review sales essays](https://review.firstround.com/) | Articles | 15 min each | Founder-led discovery stories: what to ask, what to record, and how early conversations shape the offer itself. |
+| [30 Minutes to President's Club — discovery episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Word-for-word question phrasings from top sellers; browse for the deal type you face. |
 
 ### Practice This
 

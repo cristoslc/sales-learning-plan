@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sales Learning Plan — Capability Map</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --border: #30363d;
+    --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff;
+    --green: #3fb950; --yellow: #d29922; --red: #f85149;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.75rem; margin: 0 0 .25rem; }
+  .sub { color: var(--muted); margin-bottom: 2rem; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: 1.5rem; }
+  .toolbar input { background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: .45rem .75rem; border-radius: 6px; min-width: 220px; }
+  .filter { background: var(--panel); border: 1px solid var(--border); color: var(--muted); padding: .35rem .7rem; border-radius: 999px; cursor: pointer; font-size: .85rem; }
+  .filter.on { color: var(--text); border-color: var(--accent); }
+  .progress { margin-left: auto; color: var(--muted); font-size: .9rem; }
+  .progress b { color: var(--green); }
+  .reset { background: none; border: none; color: var(--muted); cursor: pointer; font-size: .85rem; text-decoration: underline; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+  .card h2 { margin: 0 0 .4rem; font-size: 1.05rem; }
+  .card h2 a { color: var(--accent); text-decoration: none; }
+  .card h2 a:hover { text-decoration: underline; }
+  .card .tag { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-right: .5rem; }
+  .card .desc { color: var(--muted); font-size: .92rem; margin: .25rem 0 .75rem; }
+  .checks { display: flex; gap: .5rem; flex-wrap: wrap; }
+  .check { font-size: .8rem; padding: .25rem .6rem; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); cursor: pointer; user-select: none; }
+  .check.done { color: var(--green); border-color: var(--green); }
+  footer { margin-top: 2.5rem; color: var(--muted); font-size: .85rem; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sales Learning Plan</h1>
+  <div class="sub">A capability map for technical founders and consultants learning to sell. Pick a capability matching your most pressing gap; <b>1 is the gateway</b>.</div>
+
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="Filter capabilities…">
+    <button class="filter on" data-f="all">All</button>
+    <button class="filter" data-f="gateway">Gateway</button>
+    <button class="filter" data-f="todo">Not started</button>
+    <span class="progress" id="prog"></span>
+    <button class="reset" id="reset">Reset progress</button>
+  </div>
+
+  <div id="cards"></div>
+
+  <footer>
+    Source &amp; content: <a href="https://github.com/cristoslc/sales-learning-plan">github.com/cristoslc/sales-learning-plan</a> ·
+    Companion program: <a href="https://github.com/cristoslc/tl-learning-plan">tl-learning-plan</a> ·
+    Progress is stored locally in your browser.
+  </footer>
+</div>
+
+<script>
+const CAPS = [
+  { n: 1, slug: "capability-01-position-the-offer", title: "Position the Offer", group: "gateway",
+    desc: "Say who you serve and what changes for them — the sentence every other sales artifact inherits from." },
+  { n: 2, slug: "capability-02-outbound", title: "Build Outbound that Gets Replies", group: "core",
+    desc: "ICP list, 3-touch sequences, reply-rate discipline. The pipeline engine for when warm intros run out." },
+  { n: 3, slug: "capability-03-discovery", title: "Run Discovery that Surfaces Pain", group: "core",
+    desc: "SPIN questioning: implication-heavy, <40% talk ratio, prospect's words, not yours." },
+  { n: 4, slug: "capability-04-quantify-pain", title: "Quantify the Pain", group: "core",
+    desc: "Turn 'it's a time-suck' into a number the buyer co-owns. The raw material for every business case." },
+  { n: 5, slug: "capability-05-champion", title: "Find the Real Buyer and Build a Champion", group: "core",
+    desc: "Map economic buyer, champion, veto-holders — with evidence, not hope." },
+  { n: 6, slug: "capability-06-qualify-meddpicc", title: "Qualify with MEDDPICC", group: "core",
+    desc: "The hub: green/yellow/red per letter, qualify out as readily as in, sized to your deal value." },
+  { n: 7, slug: "capability-07-proposal-paper-process", title: "Write Proposals that Close", group: "core",
+    desc: "Problem-first, optioned pricing, mutual action plan — proposals built for the approver who wasn't on the call." },
+  { n: 8, slug: "capability-08-negotiation", title: "Negotiate without Discounting", group: "core",
+    desc: "Trade scope, not rate. Calibrated questions, a written fallback ladder, and the disciplined pause." },
+  { n: 9, slug: "capability-09-pipeline-forecast", title: "Manage Pipeline and Forecast Honestly", group: "core",
+    desc: "Buyer-action stage exits, weekly review, commit only on evidence. Revenue you can predict 8 weeks out." },
+  { n: 10, slug: "capability-10-referrals", title: "Turn Deals into Referrals and Second Deals", group: "core",
+    desc: "Engineered endings: results summary, referral ask, case study, 90-day re-engagement." },
+  { n: 11, slug: "capability-11-ai-partner", title: "Use AI as a Sales Leverage Tool", group: "multiplier",
+    desc: "Research briefs, role-play, AI-assisted MEDDPICC deal review — the enablement team you can't hire." },
+];
+
+const KEY = "slp-progress";
+const state = JSON.parse(localStorage.getItem(KEY) || "{}");
+let filter = "all", query = "";
+
+function save() { localStorage.setItem(KEY, JSON.stringify(state)); render(); }
+
+function render() {
+  const box = document.getElementById("cards");
+  box.innerHTML = "";
+  const doneCount = CAPS.filter(c => state[c.slug]).length;
+  document.getElementById("prog").innerHTML = `<b>${doneCount}</b>/${CAPS.length} complete`;
+  for (const c of CAPS) {
+    if (filter === "gateway" && c.group !== "gateway") continue;
+    if (filter === "todo" && state[c.slug]) continue;
+    if (query && !(c.title + " " + c.desc).toLowerCase().includes(query)) continue;
+    const el = document.createElement("div");
+    el.className = "card";
+    const checks = [`<span class="tag">${c.n}</span><h2 style="display:inline"><a href="${c.slug}.md">${c.title}</a></h2>`,
+      `<div class="desc">${c.desc}</div>`,
+      `<div class="checks"><span class="check ${state[c.slug] ? "done" : ""}" data-s="${c.slug}">${state[c.slug] ? "✓ Practiced" : "Mark practiced"}</span></div>`].join("");
+    el.innerHTML = checks;
+    box.appendChild(el);
+  }
+  box.querySelectorAll(".check").forEach(b => b.onclick = () => {
+    const s = b.dataset.s;
+    state[s] = !state[s]; if (!state[s]) delete state[s];
+    save();
+  });
+}
+
+document.getElementById("q").oninput = e => { query = e.target.value.toLowerCase(); render(); };
+document.querySelectorAll(".filter").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".filter").forEach(x => x.classList.remove("on"));
+  b.classList.add("on"); filter = b.dataset.f; render();
+});
+document.getElementById("reset").onclick = () => { localStorage.removeItem(KEY); state && Object.keys(state).forEach(k => delete state[k]); render(); };
+render();
+</script>
+</body>
+</html>

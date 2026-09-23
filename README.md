@@ -6,11 +6,11 @@ Designed to be adapted. Built in the same format as [tl-learning-plan](https://g
 
 ## What's in here
 
-All curriculum content lives in `dist/`.
+All curriculum content lives in `docs/`.
 
-- **Capability map** (`dist/_0 concept-map.md`) — 10 capabilities that change how you show up in sales conversations, plus an AI-as-leverage thread. Start here.
-- **Capability deep-dives** (`dist/capability-*.md`) — one page per capability with situation, what changes, readiness check, curated resources, and a practice exercise.
-- **Interactive capability map** (`dist/capability-map.html`) — filters and progress tracking.
+- **Capability map** (`docs/_0 concept-map.md`) — 10 capabilities that change how you show up in sales conversations, plus an AI-as-leverage thread. Start here.
+- **Capability deep-dives** (`docs/capability-*.md`) — one page per capability with situation, what changes, readiness check, curated resources, and a practice exercise.
+- **Interactive capability map** (`docs/capability-map.html`) — filters and progress tracking.
 
 ## How to use this
 

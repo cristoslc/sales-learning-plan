@@ -12,7 +12,7 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| *Founding Sales* — Pete Kazanjy | Book (free online) | ~6 hrs | The whole early-stage outbound motion written for technical people: list building, messaging, sequences, and the metrics. Chapters on list-building and first-touch are directly usable. |
+| [*Founding Sales*](https://www.foundingsales.com/) — Pete Kazanjy | Book (free online) | ~6 hrs | The whole early-stage outbound motion written for technical people: list building, messaging, sequences, and the metrics. The entire book is free online (registration), searchable chapter by chapter. The list-building and first-touch chapters are directly usable. |
 | [30 Minutes to President's Club — prospecting episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Hyper-tactical cold-call and cold-email breakdowns. Start with any "prospecting" episode; the formats are immediately stealable. |
 
 ### Go deeper

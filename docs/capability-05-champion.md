@@ -20,6 +20,7 @@
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
 | [MEDDPICC: the complete guide](https://www.closingfoundry.com/meddpicc) — Closing Foundry | Guide hub | 30 min | Element definitions plus deal-health scorecard; the buyer-stakeholder mapping drill lives here. |
+| [The Formula Behind 25 Presidents Clubs](https://meddicc.com/meddicc-media/masters-of-meddicc-lucy-williams-jones-2026) — Masters of MEDDICC | Podcast | 45 min | Champions are a spectrum, not binary: power, influence, and a personal win vs. a merely available coach. Also: engage the Economic Buyer before you need them. |
 | *The Trusted Advisor* — Maister, Green & Galford | Book | ~5 hrs | The trust-building lens for the champion relationship: trust-building as a deliberate practice, not charisma. |
 | *Founding Sales* — Kazanjy, stakeholder chapters | Book | ~2 hrs | Mapping buying committees when you're the one in the seat, including how to ask for access to power without burning the contact. |
 

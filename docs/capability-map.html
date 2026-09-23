@@ -763,9 +763,9 @@ graph TD
 
     <div class="books-section">
       <h2>Books (canonical)</h2>
-      <p class="sidebar-note" style="margin-bottom:0.5rem;">Specific chapters are linked in each capability&rsquo;s Go Deeper section.</p>
+      <p class="sidebar-note" style="margin-bottom:0.5rem;">Free author-delivered versions are linked in each capability&rsquo;s Start Here / Go Deeper sections where they exist.</p>
       <ul class="book-list">
-        <li><em>Founding Sales</em> &mdash; Pete Kazanjy</li>
+        <li><em>Founding Sales</em> &mdash; Pete Kazanjy <em>(free at foundingsales.com)</em></li>
         <li><em>SPIN Selling</em> &mdash; Neil Rackham</li>
         <li><em>The Challenger Sale</em> &mdash; Dixon &amp; Adamson</li>
         <li><em>Obviously Awesome</em> + <em>Sales Pitch</em> &mdash; April Dunford</li>
@@ -792,6 +792,7 @@ const DATA = [
     ],
     deeperResources: [
       { title: "Sales Pitch", author: "April Dunford", url: "https://www.aprildunford.com/books", format: "book", time: "~4 hrs", desc: "Turns positioning into an eight-part sales narrative. The bridge between \u201cwho we are\u201d and \u201cwhat I say on the call.\u201d" },
+      { title: "Positioning to Unlock Growth", author: "April Dunford", url: "https://portfolioresources.summitpartners.com/post/positioning-with-april-dunford", format: "video", time: "60 min", desc: "Dunford on the signs of a positioning problem, the five components, and translating positioning into a sales pitch, with Q\u0026A." },
       { title: "The Challenger Sale", author: "Matthew Dixon & Brent Adamson", url: "https://www.penguinrandomhouse.com/books/192693/", format: "book", time: "~6 hrs", desc: "Why insight-led selling beats relationship-building in complex B2B; how to construct a commercial teaching point." },
       { title: "10 Ways You Need to Change How You Think and Talk to Succeed at Sales", author: "First Round Review", url: "https://review.firstround.com/10-ways-you-need-to-change-how-you-think-and-talk-to-succeed-at-sales/", format: "article", time: "15 min", desc: "Mindset shifts for technical founders who find \u201cselling\u201d foreign." },
     ]
@@ -804,7 +805,7 @@ const DATA = [
     ready: "You have a named list of 50+ target accounts matching a written ICP, a 3-touch sequence you have actually sent, and a reply-rate baseline. You can write a first-touch message in under 15 minutes because the positioning work (Capability 1) already did the heavy lifting.",
     practice: "Write your ICP on one page (industry, size, trigger events, who buys, who blocks). Build a 50-account list from it. Write a 3-touch sequence where touch 1 references a specific observable problem, touch 2 adds one piece of proof, touch 3 is a graceful close. Send to 10 accounts this week. Record reply rate.",
     startResources: [
-      { title: "Founding Sales", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~6 hrs", desc: "The whole early-stage outbound motion written for technical people: list building, messaging, sequences, and the metrics. The chapters on list-building and first-touch are directly usable." },
+      { title: "Founding Sales", author: "Pete Kazanjy", url: "https://www.foundingsales.com/", format: "book", time: "~6 hrs", desc: "The whole early-stage outbound motion written for technical people: list building, messaging, sequences, and the metrics. The entire book is free online (registration) \u2014 searchable chapter by chapter." },
       { title: "30 Minutes to President's Club \u2014 prospecting episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Hyper-tactical cold-call and cold-email breakdowns. Start with any \u201cprospecting\u201d episode; the formats are immediately stealable." },
     ],
     deeperResources: [
@@ -826,6 +827,8 @@ const DATA = [
     ],
     deeperResources: [
       { title: "The Challenger Sale", author: "Matthew Dixon & Brent Adamson", url: "https://www.penguinrandomhouse.com/books/192693/", format: "book", time: "~6 hrs", desc: "Adds teaching to questioning: bring a hypothesis about their business, use discovery to test it rather than to survey." },
+      { title: "Huthwaite blog \u2014 Neil Rackham", author: "Neil Rackham", url: "https://www.huthwaiteinternational.com/blog/author/neil-rackham", format: "article", time: "2 min each", desc: "The SPIN author still publishing on the research behind the method, the origins of the acronym, and why questioning skills endure. Free, from the source." },
+      { title: "How to Move from Feature Selling to Gap Selling", author: "Keenan (Sales Hacker podcast)", url: "https://gtmnow.com/gap-selling-effective-sales/", format: "podcast", time: "50 min", desc: "The Gap Selling author on problem-centric vs. product-centric selling \u2014 the gap between current and future state as the unit of diagnosis." },
       { title: "Gong Labs research", author: "Gong", url: "https://www.gong.io/labs/", format: "article", time: "10 min each", desc: "Evidence on question counts, talk ratios, and what distinguishes winning discovery calls." },
       { title: "First Round Review sales essays", author: "First Round Review", url: "https://review.firstround.com/", format: "article", time: "15 min each", desc: "Founder-led discovery stories: what to ask, what to record, and how early conversations shape the offer itself." },
     ]
@@ -860,7 +863,8 @@ const DATA = [
     ],
     deeperResources: [
       { title: "MEDDPICC: the complete guide, tools and coaching", author: "Closing Foundry", url: "https://www.closingfoundry.com/meddpicc", format: "article", time: "30 min", desc: "Element definitions plus deal-health scorecard; the buyer-stakeholder mapping drill lives here." },
-      { title: "Founding Sales \u2014 stakeholder chapters", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~2 hrs", desc: "Mapping buying committees when you are the one in the seat, including how to ask for access to power without burning the contact." },
+      { title: "The Formula Behind 25 Presidents Clubs", author: "Masters of MEDDICC (MEDDICC Media)", url: "https://meddicc.com/meddicc-media/masters-of-meddicc-lucy-williams-jones-2026", format: "podcast", time: "45 min", desc: "Champions are a spectrum, not binary: power, influence, and a personal win vs. a merely available coach. Also: engage the Economic Buyer before you need them." },
+      { title: "Founding Sales \u2014 stakeholder chapters", author: "Pete Kazanjy", url: "https://www.foundingsales.com/", format: "book", time: "~2 hrs", desc: "Mapping buying committees when you are the one in the seat, including how to ask for access to power without burning the contact." },
       { title: "30 Minutes to President's Club \u2014 multi-threading episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Tactics for building coverage across a buying committee when your single contact is not enough." },
     ]
   },
@@ -878,6 +882,7 @@ const DATA = [
     deeperResources: [
       { title: "MEDDPICC Explained: A Practical Guide", author: "Closing Foundry", url: "https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders", format: "article", time: "20 min", desc: "Framework vs. process vs. method; the qualification-win rate connection; the \u201cnot an interrogation\u201d caution." },
       { title: "MEDDPICC: the complete guide, tools and coaching", author: "Closing Foundry", url: "https://www.closingfoundry.com/meddpicc", format: "article", time: "30 min", desc: "Element definitions plus a deal-health scorecard you can adapt as your own template." },
+      { title: "Key Takeaways: MEDDICC Value (webinar)", author: "Andy Whyte", url: "https://meddicc.com/resources/key-takeaways-meddicc-value", format: "video", time: "60 min", desc: "Whyte\u2019s own framing of product vs. ROI vs. value selling, and why MEDDPICC works as the common language across the customer lifecycle. Free from meddicc.com." },
       { title: "MEDDIC vs MEDDPICC vs BANT", author: "AmpUp", url: "https://www.ampup.ai/resources/meddic-vs-meddpicc-vs-bant", format: "article", time: "10 min", desc: "Choosing framework weight for deal size \u2014 relevant when your engagements are $15K, not $500K." },
     ]
   },
@@ -890,7 +895,7 @@ const DATA = [
     practice: "Rewrite your standard proposal template: page 1 is the problem and its cost in their numbers; the pricing is optioned (good/better/best); the last page is a mutual action plan with dates. For the next proposal, agree the review date and decision-maker <em>before</em> sending.",
     startResources: [
       { title: "Sales Pitch", author: "April Dunford", url: "https://www.aprildunford.com/books", format: "book", time: "~4 hrs", desc: "The eight-part sales narrative structure; the proposal and pitch should tell one story, and Dunford shows how positioning drives it." },
-      { title: "Founding Sales \u2014 closing & paperwork chapters", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~3 hrs", desc: "The practical, founder-in-the-seat version: proposals, quotes, contracting mechanics, and keeping momentum to signature." },
+      { title: "Founding Sales \u2014 closing & paperwork chapters", author: "Pete Kazanjy", url: "https://www.foundingsales.com/", format: "book", time: "~3 hrs", desc: "The practical, founder-in-the-seat version: proposals, quotes, contracting mechanics, and keeping momentum to signature." },
     ],
     deeperResources: [
       { title: "MEDDPICC: the complete guide (Paper Process)", author: "Closing Foundry", url: "https://www.closingfoundry.com/meddpicc", format: "article", time: "15 min", desc: "Why paper process quietly kills \u201cready to sign\u201d deals, and how mutual action plans de-risk it." },
@@ -907,10 +912,12 @@ const DATA = [
     practice: "Write your trade ladder for the next pricing conversation: 3 things you can give (payment terms, scope reduction, pilot pricing for a <em>smaller</em> first phase) and your walk-away. Practice saying your number, then closing your mouth \u2014 literally rehearse the pause. Next discount request: respond with a scope trade, not a rate cut.",
     startResources: [
       { title: "Never Split the Difference", author: "Chris Voss", url: "https://www.amazon.com/Never-Split-Difference-Negotiating-As-If/dp/0062407805", format: "book", time: "~6 hrs", desc: "Hostage-negotiation tactics adapted to business: tactical empathy, mirroring, labeling, calibrated questions, and the \u201cthat's right\u201d moment. The most immediately usable negotiation book for people who hate haggling." },
+      { title: "Never Split the Difference \u2014 Talks at Google", author: "Chris Voss", url: "https://www.youtube.com/watch?v=guZa7mQV1l0", format: "video", time: "55 min", desc: "Voss delivers the core of the book himself: people are not rational, compromise is overrated, calibrated questions beat demands. Watch before reading." },
       { title: "30 Minutes to President's Club \u2014 negotiation episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Word-for-word responses to \u201cit is too expensive,\u201d from working sellers rather than theorists." },
     ],
     deeperResources: [
       { title: "Gong Labs research", author: "Gong", url: "https://www.gong.io/labs/", format: "article", time: "10 min each", desc: "Evidence on discounting behavior and what actually correlates with closed-won at better prices." },
+      { title: "Chris Voss on The Knowledge Project", author: "Shane Parrish", url: "https://fs.blog/2018/01/chris-voss/", format: "podcast", time: "60 min", desc: "Long-form conversation with Voss on negotiation psychology \u2014 free companion to the book." },
       { title: "Sales Pitch \u2014 value chapters", author: "April Dunford", url: "https://www.aprildunford.com/books", format: "book", time: "~2 hrs", desc: "The structural fix for discount pressure: differentiated value makes price conversations shorter. If prospects do not perceive differentiation, price is the only lever they have." },
     ]
   },
@@ -923,7 +930,7 @@ const DATA = [
     practice: "Define 4 stages for your consultancy with buyer-action exit criteria (e.g., Stage 2 moves to 3 only when: quantified pain stated by buyer AND economic buyer identified). Move your current opportunities to honest stages with last-verified dates. Put a recurring 45-minute pipeline review on your calendar \u2014 same time every week.",
     startResources: [
       { title: "MEDDPICC Explained: A Practical Guide", author: "Closing Foundry", url: "https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders", format: "article", time: "20 min", desc: "The forecast-rigor argument: qualification discipline as the basis of commit decisions, dynamic rather than point-in-time." },
-      { title: "Founding Sales \u2014 pipeline chapters", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~2 hrs", desc: "The solo-operator version: simple stage definitions, CRM minimalism, and weekly pipeline review cadence." },
+      { title: "Founding Sales \u2014 pipeline chapters", author: "Pete Kazanjy", url: "https://www.foundingsales.com/", format: "book", time: "~2 hrs", desc: "The solo-operator version: simple stage definitions, CRM minimalism, and weekly pipeline review cadence." },
     ],
     deeperResources: [
       { title: "Predictable Revenue", author: "Aaron Ross", url: "https://www.amazon.com/Predictable-Revenue-Business-Practices-Companies/dp/0984380213", format: "book", time: "~5 hrs", desc: "The outbound-to-pipeline system classic; more relevant at scale, useful for the metrics vocabulary." },
@@ -940,10 +947,12 @@ const DATA = [
     practice: "Pick your best engagement from the last 2 years. Write the results summary you never wrote (with numbers). Send it to the client with a specific referral ask (\u201cwho are two people you know with the same problem?\u201d) and offer to help make an introduction easy for them. Schedule the 90-day follow-up.",
     startResources: [
       { title: "The Trusted Advisor", author: "Maister, Green & Galford", url: "https://www.amazon.com/Trusted-Advisor-David-H-Maister/dp/0684837094", format: "book", time: "~5 hrs", desc: "The trust framework for long-horizon client relationships; the basis for turning one project into a practice." },
+      { title: "Being Right Isn\u2019t Enough", author: "David Maister", url: "https://about.davidmaister.com/articles/17/12/", format: "article", time: "10 min", desc: "The trust equation \u2014 credibility, reliability, intimacy, low self-orientation \u2014 in the co-author\u2019s own words. Free distillation of the book\u2019s core." },
       { title: "30 Minutes to President's Club \u2014 expansion episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Tactical asks for referrals and expansion conversations that do not feel desperate." },
     ],
     deeperResources: [
-      { title: "Founding Sales \u2014 customer-success chapters", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~2 hrs", desc: "The founder's version: turning early customers into references, case studies, and a repeatable pipeline source." },
+      { title: "Founding Sales \u2014 customer-success chapters", author: "Pete Kazanjy", url: "https://www.foundingsales.com/", format: "book", time: "~2 hrs", desc: "The founder's version: turning early customers into references, case studies, and a repeatable pipeline source." },
+      { title: "Maister's free podcast masterclass series", author: "David Maister", url: "https://davidmaister.com/", format: "podcast", time: "episodes", desc: "Maister released his advisory masterclasses free on his own site, including sessions on earning trust and managing client relationships." },
       { title: "First Round Review sales essays", author: "First Round Review", url: "https://review.firstround.com/", format: "article", time: "15 min each", desc: "Recurring, well-edited treatment of referral motions and client relationships in founder-led sales." },
     ]
   },

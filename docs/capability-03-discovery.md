@@ -21,6 +21,8 @@
 |----------|--------|------|-------------|
 | *Gap Selling* — Keenan | Book | ~5 hrs | Reframes the whole sale around the gap between current and future state; strong on why "no decision" happens. |
 | *The Challenger Sale* — Dixon & Adamson | Book | ~6 hrs | Adds teaching to questioning: bring a hypothesis about their business, use discovery to test it rather than to survey. |
+| [Huthwaite blog](https://www.huthwaiteinternational.com/blog/author/neil-rackham) — Neil Rackham | Articles | 2 min each | The SPIN author still publishing on the research behind the method, the origins of the acronym, and why questioning skills endure. Free, from the source. |
+| [How to Move from Feature Selling to Gap Selling](https://gtmnow.com/gap-selling-effective-sales/) — Keenan (Sales Hacker podcast) | Podcast | 50 min | The Gap Selling author on problem-centric vs. product-centric selling — the gap between current and future state as the unit of diagnosis. |
 | [Gong Labs](https://www.gong.io/labs/) | Data essays | 10 min each | Evidence on question counts, talk ratios, and what distinguishes winning discovery calls. |
 
 ### Practice This

@@ -12,7 +12,8 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| *Never Split the Difference* — Chris Voss | Book | ~6 hrs | Hostage-negotiation tactics adapted to business: tactical empathy, mirroring, labeling, calibrated questions, and the "that's right" moment. The most immediately usable negotiation book for people who hate haggling [8]. |
+| [Never Split the Difference](https://www.amazon.com/Never-Split-Difference-Negotiating-As-If/dp/0062407805) — Chris Voss | Book | ~6 hrs | Hostage-negotiation tactics adapted to business: tactical empathy, mirroring, labeling, calibrated questions, and the "that's right" moment. The most immediately usable negotiation book for people who hate haggling. |
+| [Never Split the Difference — Talks at Google](https://www.youtube.com/watch?v=guZa7mQV1l0) — Chris Voss | Video | 55 min | Voss delivers the core of the book himself: people are not rational, compromise is overrated, calibrated questions beat demands. Watch before reading. |
 | [30 Minutes to President's Club — negotiation episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Word-for-word responses to "it's too expensive," from working sellers rather than theorists. |
 
 ### Go deeper
@@ -20,6 +21,7 @@
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
 | [Gong Labs research](https://www.gong.io/labs/) | Data essays | 10 min each | Evidence on discounting behavior and what actually correlates with closed-won at better prices. |
+| [Chris Voss on The Knowledge Project](https://fs.blog/2018/01/chris-voss/) — Shane Parrish | Podcast | 60 min | Long-form conversation with Voss on negotiation psychology — free companion to the book. |
 | *Sales Pitch* — Dunford, value chapters | Book | ~2 hrs | The structural fix for discount pressure: differentiated value makes price conversations shorter. If prospects don't perceive differentiation, price is the only lever they have [7]. |
 | *Getting to Yes* — Fisher & Ury | Book | ~4 hrs | The classic on interests vs. positions and principled trades; drier, but the vocabulary is everywhere. |
 

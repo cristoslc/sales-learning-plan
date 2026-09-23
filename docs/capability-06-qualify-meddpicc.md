@@ -23,6 +23,7 @@
 |----------|--------|------|-------------|
 | [MEDDPICC Explained: A Practical Guide](https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders) — Closing Foundry | Article | 20 min | Framework vs. process vs. method; the qualification→win-rate connection; the "not an interrogation" caution [3]. |
 | [MEDDPICC: the complete guide, tools and coaching](https://www.closingfoundry.com/meddpicc) — Closing Foundry | Guide hub | 30 min | Element definitions plus a deal-health scorecard you can adapt as your own template [3]. |
+| [Key Takeaways: MEDDICC Value](https://meddicc.com/resources/key-takeaways-meddicc-value) — Andy Whyte | Webinar | 60 min | Whyte's own framing of product vs. ROI vs. value selling, and why MEDDPICC works as the common language across the customer lifecycle. Free from meddicc.com. |
 | [MEDDIC vs MEDDPICC vs BANT](https://www.ampup.ai/resources/meddic-vs-meddpicc-vs-bant) | Article | 10 min | Choosing framework weight for deal size — relevant when your engagements are $15K, not $500K [4]. |
 
 ### Practice This

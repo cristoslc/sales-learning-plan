@@ -1,126 +1,1243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sales Learning Plan — Capability Map</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Capability Map</title>
+<script>
+// FOUC prevention: apply theme before paint
+(function() {
+  var pref = localStorage.getItem('theme-preference') || 'auto';
+  var theme = pref === 'night' ? 'dark' : pref === 'day' ? 'light' : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-theme-preference', pref);
+})();
+</script>
 <style>
   :root {
-    --bg: #0d1117; --panel: #161b22; --border: #30363d;
-    --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff;
-    --green: #3fb950; --yellow: #d29922; --red: #f85149;
+    /*
+     * Visual Identity — WCAG AAA adapted
+     * Reference blue: #00049E | Grey: #706F6F | Black: #000000
+     * Secondary: #2C32FF #00B0F0 #00B4C4 #82CA9C #9185BE #B9BAFF
+     * Typography: Arial
+     */
+    --bg: #f4f4f4;
+    --surface: #ffffff;
+    --border: #d0d0cf;
+    --text: #000000;           /* 21:1 on --surface */
+    --text-secondary: #4a4a49; /* 7.7:1 on --surface */
+    --accent: #00049E;         /* 14.5:1 on --surface */
+    --accent-light: #eef0fa;
+    --accent-on-light: #00049E;/* 13.2:1 on --accent-light */
+    --c1: #00049E;
+    --c1-light: #eef0fa;
+    --c1-on-light: #00049E;
+    --c2: #006b6b;             /* darkened teal for AAA — from #00B4C4 */
+    --c2-light: #e6f7f7;
+    --c2-on-light: #005555;
+    --c3: #1a1f99;             /* darkened vivid blue — from #2C32FF */
+    --c3-light: #ededfc;
+    --c3-on-light: #1a1f99;
+    --c4: #5a4a8a;             /* darkened purple — from #9185BE */
+    --c4-light: #f2f0f8;
+    --c4-on-light: #4a3d75;
+    --c5: #00698f;             /* darkened sky blue — from #00B0F0 */
+    --c5-light: #e6f4fa;
+    --c5-on-light: #005a7a;
+    --c6: #2d7a4a;             /* darkened green — from #82CA9C */
+    --c6-light: #edf7f1;
+    --c6-on-light: #1f6338;
+    --c7: #8a4500;             /* darkened amber — distinctive from other caps */
+    --c7-light: #fef3e6;
+    --c7-on-light: #6b3600;
+    --c8: #2d7a4a;             /* green — Design from Business */
+    --c8-light: #edf7f1;
+    --c8-on-light: #1f6338;
+    --c9: #7a2d5a;             /* plum — Write to Drive Decisions */
+    --c9-light: #f8edf4;
+    --c9-on-light: #5e1d45;
+    --c10: #8a4500;            /* amber — Lead the Conversation */
+    --c10-light: #fef3e6;
+    --c10-on-light: #6b3600;
+    --green: #1f6338;          /* check color */
+    --green-light: #edf7f1;
+    --green-on-light: #1f6338;
+    --focus: #00049E;
+    --bv-grey: #706F6F;
+    --radius: 6px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
   }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
-  h1 { font-size: 1.75rem; margin: 0 0 .25rem; }
-  .sub { color: var(--muted); margin-bottom: 2rem; }
-  .toolbar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: 1.5rem; }
-  .toolbar input { background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: .45rem .75rem; border-radius: 6px; min-width: 220px; }
-  .filter { background: var(--panel); border: 1px solid var(--border); color: var(--muted); padding: .35rem .7rem; border-radius: 999px; cursor: pointer; font-size: .85rem; }
-  .filter.on { color: var(--text); border-color: var(--accent); }
-  .progress { margin-left: auto; color: var(--muted); font-size: .9rem; }
-  .progress b { color: var(--green); }
-  .reset { background: none; border: none; color: var(--muted); cursor: pointer; font-size: .85rem; text-decoration: underline; }
-  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
-  .card h2 { margin: 0 0 .4rem; font-size: 1.05rem; }
-  .card h2 a { color: var(--accent); text-decoration: none; }
-  .card h2 a:hover { text-decoration: underline; }
-  .card .tag { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-right: .5rem; }
-  .card .desc { color: var(--muted); font-size: .92rem; margin: .25rem 0 .75rem; }
-  .checks { display: flex; gap: .5rem; flex-wrap: wrap; }
-  .check { font-size: .8rem; padding: .25rem .6rem; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); cursor: pointer; user-select: none; }
-  .check.done { color: var(--green); border-color: var(--green); }
-  footer { margin-top: 2.5rem; color: var(--muted); font-size: .85rem; }
-  footer a { color: var(--accent); }
+
+  [data-theme="dark"] {
+    --bg: #161616;
+    --surface: #1e1e1e;
+    --border: #333333;
+    --text: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent: #6b9fff;
+    --accent-light: #1a2433;
+    --accent-on-light: #8bb5ff;
+    --c1: #6b9fff; --c1-light: #1a2433; --c1-on-light: #8bb5ff;
+    --c2: #4dc9c0; --c2-light: #122928; --c2-on-light: #6dd8d0;
+    --c3: #7b88f0; --c3-light: #1a1d33; --c3-on-light: #99a4f5;
+    --c4: #b0a0d8; --c4-light: #221e30; --c4-on-light: #c8bbe5;
+    --c5: #50b8d8; --c5-light: #122530; --c5-on-light: #70c8e5;
+    --c6: #6db88a; --c6-light: #152a1c; --c6-on-light: #8dcc9f;
+    --c7: #d89048; --c7-light: #2a1f12; --c7-on-light: #e5a868;
+    --c8: #6db88a; --c8-light: #152a1c; --c8-on-light: #8dcc9f;
+    --c9: #cc88b5; --c9-light: #2a1525; --c9-on-light: #dda0cc;
+    --c10: #d89048; --c10-light: #2a1f12; --c10-on-light: #e5a868;
+    --green: #6db88a; --green-light: #152a1c; --green-on-light: #8dcc9f;
+    --focus: #6b9fff;
+    --bv-grey: #909090;
+    --shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  [data-theme="dark"] .mermaid svg { filter: invert(0.88) hue-rotate(180deg) saturate(0.8); }
+
+  .transitions-enabled, .transitions-enabled * {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .theme-toggle button {
+    background: var(--surface);
+    color: var(--text-secondary);
+    border: none;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+    font-family: inherit;
+    cursor: pointer;
+    border-right: 1px solid var(--border);
+  }
+  .theme-toggle button:last-child { border-right: none; }
+  .theme-toggle button[aria-pressed="true"] {
+    background: var(--accent);
+    color: #fff;
+  }
+  .theme-toggle button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: -2px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    z-index: 1000;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Focus visible for all interactive elements */
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* --- Layout: header + two equal panes --- */
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .page-header {
+    grid-column: 1 / -1;
+    padding: 1.5rem 1.75rem 0;
+    margin-bottom: 0;
+  }
+
+  .content-pane {
+    overflow-y: auto;
+    padding: 1rem 1.75rem 1.5rem;
+    min-width: 0;
+  }
+
+  .map-pane {
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 1.5rem 1.75rem;
+    box-shadow: -6px 0 16px rgba(0,0,0,0.04);
+  }
+  [data-theme="dark"] .map-pane {
+    box-shadow: -6px 0 16px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 960px) {
+    .layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr;
+      height: auto;
+    }
+    .page-header { order: 1; }
+    .map-pane {
+      order: 2;
+      max-height: none;
+      overflow-y: visible;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 -4px 12px rgba(0,0,0,0.04);
+    }
+    [data-theme="dark"] .map-pane {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 -4px 12px rgba(0,0,0,0.2);
+    }
+    .content-pane { order: 3; overflow-y: visible; }
+  }
+
+  /* --- Header --- */
+  .page-header p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+
+  .page-header h1 { font-size: 1.35rem; font-weight: 700; }
+
+  .page-header h1 { display: flex; align-items: center; gap: 0.4rem; }
+
+  .page-header {
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    z-index: 10;
+    position: relative;
+  }
+  [data-theme="dark"] .page-header {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+
+
+  /* --- Filters + theme toggle row --- */
+  .page-header .filters {
+    margin-bottom: 0;
+  }
+  .filters-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .filters {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filters-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-right: 0.25rem;
+  }
+
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* --- GitHub link --- */
+  .github-link {
+    color: var(--text-secondary);
+    transition: color 0.15s;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+  }
+  .github-link:hover { color: var(--accent); }
+  .github-link svg { display: inline-block; vertical-align: middle; }
+
+  /* --- Map pane content --- */
+  .map-pane h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--accent);
+    border-bottom-width: 3px;
+    display: inline-block;
+  }
+
+  .map-pane h2::after {
+    content: '';
+    display: block;
+  }
+
+  .map-graph {
+    flex: 0 0 auto;
+    min-height: 420px;
+  }
+
+  .map-graph .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+
+  .map-graph .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .map-graph .mermaid .nodeLabel {
+    font-family: Arial, sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+  }
+
+  .map-legend {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background: var(--bg);
+    border-radius: var(--radius);
+  }
+
+  .map-legend strong { color: var(--text); }
+
+  /* --- Books section in map pane --- */
+  .books-section {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: auto;
+  }
+
+  .book-list { list-style: none; font-size: 0.82rem; }
+
+  .book-list li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.4;
+  }
+
+  .book-list li:last-child { border-bottom: none; }
+
+  .book-short { font-weight: 700; color: var(--text); }
+  .book-caps { font-size: 0.72rem; color: var(--text-secondary); }
+
+  /* --- Capability Cards --- */
+  .capability {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 1.15rem;
+    position: relative;
+  }
+
+  .capability.completed { border-color: var(--c6); }
+
+  @keyframes capability-target-glow {
+    0% {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 0 rgba(0, 4, 158, 0), 0 0 0 0 rgba(0, 4, 158, 0), var(--shadow);
+      background: var(--surface);
+    }
+    20% {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(0, 4, 158, 0.12), 0 0 28px rgba(0, 4, 158, 0.2), var(--shadow);
+      background: rgba(0, 4, 158, 0.03);
+    }
+    100% {
+      border-color: var(--border);
+      box-shadow: var(--shadow);
+      background: var(--surface);
+    }
+  }
+
+  .capability.completed.is-jump-target {
+    animation: capability-target-glow 3.2s ease-out;
+  }
+
+  .capability.is-jump-target {
+    animation: capability-target-glow 3.2s ease-out;
+  }
+
+  /* Card header — always visible */
+  .cap-header {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem 1.15rem;
+    gap: 0.75rem;
+  }
+
+  .cap-number {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .cap-number.c1 { background: var(--c1-light); color: var(--c1-on-light); }
+  .cap-number.c2 { background: var(--c2-light); color: var(--c2-on-light); }
+  .cap-number.c3 { background: var(--c3-light); color: var(--c3-on-light); }
+  .cap-number.c4 { background: var(--c4-light); color: var(--c4-on-light); }
+  .cap-number.c5 { background: var(--c5-light); color: var(--c5-on-light); }
+  .cap-number.c6 { background: var(--c6-light); color: var(--c6-on-light); }
+  .cap-number.c7 { background: var(--c7-light); color: var(--c7-on-light); }
+  .cap-number.c8 { background: var(--c8-light); color: var(--c8-on-light); }
+  .cap-number.c9 { background: var(--c9-light); color: var(--c9-on-light); }
+  .cap-number.c10 { background: var(--c10-light); color: var(--c10-on-light); }
+  .cap-number.c0 { background: var(--bg); color: var(--text-secondary); border: 1.5px solid var(--border); }
+
+  .cap-header-content { flex-grow: 1; min-width: 0; }
+
+  .cap-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cap-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    flex-grow: 1;
+  }
+
+  /* Checkbox */
+  .cap-check {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    background: var(--surface);
+  }
+
+  .cap-check:hover { border-color: var(--c6); }
+
+  .cap-check:checked {
+    background: var(--c6);
+    border-color: var(--c6);
+  }
+
+  .cap-check:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Card body — situation, changes, ready — always visible */
+  .cap-body {
+    padding: 0 1.15rem 0.75rem;
+    padding-left: calc(1.15rem + 2rem + 0.75rem); /* align with text after number */
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    font-weight: 700;
+    margin: 0.75rem 0 0.3rem;
+  }
+
+  .section-label:first-child { margin-top: 0; }
+
+  .prose { font-size: 0.9rem; line-height: 1.6; }
+
+  .ready-box {
+    background: var(--green-light);
+    border-left: 3px solid var(--c6);
+    padding: 0.6rem 0.85rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.88rem;
+    color: var(--c6-on-light);
+    margin-top: 0.5rem;
+  }
+
+  /* --- Collapsible subsections --- */
+  .subsection { border-top: 1px solid var(--border); }
+
+  .subsection-toggle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.65rem 1.15rem;
+    padding-left: calc(1.15rem + 2rem + 0.75rem);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    gap: 0.4rem;
+    text-align: left;
+  }
+
+  .subsection-toggle:hover { color: var(--text); }
+
+  .subsection-chevron {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.15s;
+    fill: currentColor;
+  }
+
+  .subsection[aria-expanded="true"] .subsection-chevron { transform: rotate(90deg); }
+
+  .subsection-count {
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-left: auto;
+  }
+
+  .subsection-body {
+    display: none;
+    padding: 0 1.15rem 0.85rem;
+    padding-left: calc(1.15rem + 2rem + 0.75rem);
+  }
+
+  .subsection[aria-expanded="true"] .subsection-body { display: block; }
+
+  /* --- Resource Cards --- */
+  .resources { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .resource {
+    display: flex;
+    gap: 0.65rem;
+    padding: 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    align-items: flex-start;
+  }
+
+  .resource:hover { border-color: var(--accent); }
+  .resource.hidden { display: none; }
+
+  .format-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .format-badge.video { background: var(--c1-light); color: var(--c1-on-light); }
+  .format-badge.article { background: var(--c6-light); color: var(--c6-on-light); }
+  .format-badge.podcast { background: var(--c4-light); color: var(--c4-on-light); }
+  .format-badge.guide { background: var(--c5-light); color: var(--c5-on-light); }
+  .format-badge.research { background: var(--c2-light); color: var(--c2-on-light); }
+  .format-badge.book { background: var(--c3-light); color: var(--c3-on-light); }
+
+  .resource-info { flex-grow: 1; min-width: 0; }
+
+  .resource-title { font-weight: 600; font-size: 0.88rem; }
+
+  .resource-title a { color: var(--text); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 2px; }
+  .resource-title a:hover { text-decoration-color: var(--accent); color: var(--accent); }
+
+  .resource-author { font-size: 0.78rem; color: var(--text-secondary); }
+  .resource-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.2rem; }
+  .resource-time { font-size: 0.75rem; color: var(--text-secondary); flex-shrink: 0; white-space: nowrap; margin-top: 0.15rem; }
+
+  /* --- Practice box --- */
+  .practice-box {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 0.6rem 0.85rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.88rem;
+    color: var(--accent-on-light);
+  }
+
+  /* --- Footer --- */
+  footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .reset-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.3rem 0.7rem;
+    font-size: 0.72rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .content-pane { padding: 0.75rem; }
+    .map-pane { padding: 1rem; }
+    .cap-body, .subsection-toggle, .subsection-body { padding-left: 0.75rem; }
+    .resource { flex-wrap: wrap; }
+    .resource-time { width: 100%; margin-top: 0.2rem; }
+    .page-header h1 { font-size: 1.15rem; }
+    .page-header p { font-size: 0.8rem; }
+    .page-header { padding: 0.75rem 0.75rem 0; }
+    .filters { gap: 0.3rem; }
+    .filter-btn { padding: 0.25rem 0.55rem; font-size: 0.72rem; }
+    .theme-toggle button { padding: 0.25rem 0.55rem; font-size: 0.72rem; }
+    .cap-header { gap: 0.5rem; }
+    .cap-number { width: 32px; height: 32px; font-size: 0.85rem; }
+    .cap-title { font-size: 0.95rem; }
+    .section-label { font-size: 0.65rem; }
+    .prose { font-size: 0.85rem; }
+    .subsection-toggle { font-size: 0.8rem; }
+    footer { font-size: 0.7rem; flex-wrap: wrap; gap: 0.5rem; }
+    .github-link svg { width: 18px; height: 18px; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Sales Learning Plan</h1>
-  <div class="sub">A capability map for technical founders and consultants learning to sell. Pick a capability matching your most pressing gap; <b>1 is the gateway</b>.</div>
 
-  <div class="toolbar">
-    <input id="q" type="search" placeholder="Filter capabilities…">
-    <button class="filter on" data-f="all">All</button>
-    <button class="filter" data-f="gateway">Gateway</button>
-    <button class="filter" data-f="todo">Not started</button>
-    <span class="progress" id="prog"></span>
-    <button class="reset" id="reset">Reset progress</button>
-  </div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <div id="cards"></div>
+<div class="layout">
+  <header class="page-header" id="main-content">
+    <h1>Sales Capability Map <a href="https://github.com/cristoslc/sales-learning-plan" class="github-link" aria-label="View source on GitHub" title="View source on GitHub"><svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></h1>
+    <p>A capability-based program for technical founders and consultants moving from building expertise to selling expertise. Each capability has a situation, curated resources, and a practice exercise. Start with <strong>Capability 1</strong> or jump to whatever your next deal needs most.</p>
+    <div class="filters-row">
+      <nav class="filters" aria-label="Filter resources by format">
+        <span class="filters-label" id="filter-label">Show:</span>
+        <button class="filter-btn" aria-pressed="true" data-filter="all" aria-describedby="filter-label">All</button>
+        <button class="filter-btn" aria-pressed="false" data-filter="video" aria-describedby="filter-label">Video</button>
+        <button class="filter-btn" aria-pressed="false" data-filter="article" aria-describedby="filter-label">Article</button>
+        <button class="filter-btn" aria-pressed="false" data-filter="podcast" aria-describedby="filter-label">Podcast</button>
+        <button class="filter-btn" aria-pressed="false" data-filter="book" aria-describedby="filter-label">Book</button>
+      </nav>
+      <div class="theme-toggle" role="group" aria-label="Theme preference">
+        <button data-theme-btn="day" aria-pressed="false">Day</button>
+        <button data-theme-btn="night" aria-pressed="false">Night</button>
+        <button data-theme-btn="auto" aria-pressed="true">Auto</button>
+      </div>
+    </div>
+  </header>
 
-  <footer>
-    Source &amp; content: <a href="https://github.com/cristoslc/sales-learning-plan">github.com/cristoslc/sales-learning-plan</a> ·
-    Companion program: <a href="https://github.com/cristoslc/tl-learning-plan">tl-learning-plan</a> ·
-    Progress is stored locally in your browser.
-  </footer>
+  <main class="content-pane" role="main">
+
+    <div id="capabilities" role="list" aria-label="Capabilities"></div>
+
+    <footer>
+      <span>Sales Learning Program &mdash; September 2026 &middot; <a href="https://github.com/cristoslc/sales-learning-plan" style="color: var(--accent);">Source on GitHub</a></span>
+      <button class="reset-btn" onclick="resetProgress()" aria-label="Reset all progress">Reset progress</button>
+    </footer>
+  </main>
+
+  <aside class="map-pane" aria-label="Capability map and reference">
+    <h2>How they connect</h2>
+    <div class="map-graph" id="capability-graph">
+<pre class="mermaid">
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#eef0fa',
+    'primaryBorderColor': '#00049E',
+    'primaryTextColor': '#00049E',
+    'lineColor': '#706F6F',
+    'fontSize': '13px',
+    'fontFamily': 'Arial, sans-serif',
+    'edgeLabelBackground': '#ffffff'
+  }
+}}%%
+graph TD
+    C11["11. AI Sales Partner"]:::alongside
+    C1["1. Position the Offer"]
+    C2["2. Outbound"]
+    C3["3. Discovery"]
+    C4["4. Quantify Pain"]
+    C5["5. Champion & Buyers"]
+    C6["6. Qualify (MEDDPICC)"]
+    C7["7. Proposal & Paper Process"]
+    C8["8. Negotiation"]
+    C9["9. Pipeline & Forecast"]
+    C10["10. Referrals"]
+
+    C1 --> C2
+    C1 --> C3
+    C1 --> C6
+    C3 --> C4
+    C3 --> C5
+    C4 --> C6
+    C5 --> C6
+    C6 --> C7
+    C6 --> C9
+    C7 --> C8
+    C9 --> C10
+    C10 ~~~ C11
+
+    classDef default fill:#eef0fa,stroke:#00049E,stroke-width:2px,color:#00049E,font-weight:700,rx:20,ry:20
+    classDef alongside fill:#f8f8f8,stroke:#706F6F,stroke-width:1.5px,stroke-dasharray:5 4,color:#4a4a49,font-weight:600,rx:20,ry:20
+
+    style C2 fill:#fef3e6,stroke:#8a4500,color:#6b3600
+    style C3 fill:#e6f7f7,stroke:#006b6b,color:#005555
+    style C4 fill:#edf7f1,stroke:#2d7a4a,color:#1f6338
+    style C5 fill:#e6f4fa,stroke:#00698f,color:#005a7a
+    style C6 fill:#ededfc,stroke:#1a1f99,color:#1a1f99
+    style C7 fill:#edf7f1,stroke:#2d7a4a,color:#1f6338
+    style C8 fill:#f8edf4,stroke:#7a2d5a,color:#5e1d45
+    style C9 fill:#f2f0f8,stroke:#5a4a8a,color:#4a3d75
+    style C10 fill:#fef3e6,stroke:#8a4500,color:#6b3600
+</pre>
+<!-- old SVG nodes removed - Mermaid handles rendering now -->
+</svg>
+    </div>
+
+    <div class="map-legend">
+<strong>1. Position the Offer</strong> is the gateway, and it feeds <strong>2. Outbound</strong> and <strong>3. Discovery</strong>: every message and question inherits its language from positioning. 3 and 4 are the discovery pair &mdash; question discipline feeds <strong>4. Quantify the Pain</strong>, and both discovery outputs (<strong>5. Champion &amp; Buyers</strong> included) feed <strong>6. Qualify (MEDDPICC)</strong>, the hinge that converts diagnosis into go/no-go evidence. Qualification feeds <strong>7. Proposal &amp; Paper Process</strong> and <strong>9. Pipeline &amp; Forecast</strong>; proposals feed <strong>8. Negotiation</strong>. <strong>10. Referrals &amp; Second Deals</strong> compounds everything and loops back into positioning as proof. <strong>11. AI Sales Partner</strong> is a force multiplier you use alongside everything.</div>
+
+    <div class="books-section">
+      <h2>Books (canonical)</h2>
+      <p class="sidebar-note" style="margin-bottom:0.5rem;">Specific chapters are linked in each capability&rsquo;s Go Deeper section.</p>
+      <ul class="book-list">
+        <li><em>Founding Sales</em> &mdash; Pete Kazanjy</li>
+        <li><em>SPIN Selling</em> &mdash; Neil Rackham</li>
+        <li><em>The Challenger Sale</em> &mdash; Dixon &amp; Adamson</li>
+        <li><em>Obviously Awesome</em> + <em>Sales Pitch</em> &mdash; April Dunford</li>
+        <li><em>MEDDICC</em> &mdash; Andy Whyte</li>
+        <li><em>Never Split the Difference</em> &mdash; Chris Voss</li>
+        <li><em>The Trusted Advisor</em> &mdash; Maister, Green &amp; Galford</li>
+      </ul>
+    </div>
+  </aside>
 </div>
 
 <script>
-const CAPS = [
-  { n: 1, slug: "capability-01-position-the-offer", title: "Position the Offer", group: "gateway",
-    desc: "Say who you serve and what changes for them — the sentence every other sales artifact inherits from." },
-  { n: 2, slug: "capability-02-outbound", title: "Build Outbound that Gets Replies", group: "core",
-    desc: "ICP list, 3-touch sequences, reply-rate discipline. The pipeline engine for when warm intros run out." },
-  { n: 3, slug: "capability-03-discovery", title: "Run Discovery that Surfaces Pain", group: "core",
-    desc: "SPIN questioning: implication-heavy, <40% talk ratio, prospect's words, not yours." },
-  { n: 4, slug: "capability-04-quantify-pain", title: "Quantify the Pain", group: "core",
-    desc: "Turn 'it's a time-suck' into a number the buyer co-owns. The raw material for every business case." },
-  { n: 5, slug: "capability-05-champion", title: "Find the Real Buyer and Build a Champion", group: "core",
-    desc: "Map economic buyer, champion, veto-holders — with evidence, not hope." },
-  { n: 6, slug: "capability-06-qualify-meddpicc", title: "Qualify with MEDDPICC", group: "core",
-    desc: "The hub: green/yellow/red per letter, qualify out as readily as in, sized to your deal value." },
-  { n: 7, slug: "capability-07-proposal-paper-process", title: "Write Proposals that Close", group: "core",
-    desc: "Problem-first, optioned pricing, mutual action plan — proposals built for the approver who wasn't on the call." },
-  { n: 8, slug: "capability-08-negotiation", title: "Negotiate without Discounting", group: "core",
-    desc: "Trade scope, not rate. Calibrated questions, a written fallback ladder, and the disciplined pause." },
-  { n: 9, slug: "capability-09-pipeline-forecast", title: "Manage Pipeline and Forecast Honestly", group: "core",
-    desc: "Buyer-action stage exits, weekly review, commit only on evidence. Revenue you can predict 8 weeks out." },
-  { n: 10, slug: "capability-10-referrals", title: "Turn Deals into Referrals and Second Deals", group: "core",
-    desc: "Engineered endings: results summary, referral ask, case study, 90-day re-engagement." },
-  { n: 11, slug: "capability-11-ai-partner", title: "Use AI as a Sales Leverage Tool", group: "multiplier",
-    desc: "Research briefs, role-play, AI-assisted MEDDPICC deal review — the enablement team you can't hire." },
+const DATA = [
+  {
+    id: 1, cls: "c1",
+    title: "Position the Offer",
+    situation: "Someone asks \u201cso what do you do?\u201d and the answer names technologies (FileMaker, AWS, AI integrations) instead of outcomes. Prospects nod politely and file you under \u201cgeneric technical consultant.\u201d The work saves clients thousands of hours a year, but the words do not transmit that.",
+    changes: "You learn to lead with who the offer is for and what measurably changes for them, not with what you are good at. You can state a positioning sentence \u2014 \u201cI help [who] achieve [measurable outcome] via [differentiated mechanism] without [the pain of the status quo]\u201d \u2014 and every downstream artifact (outbound messages, discovery questions, proposals) inherits its language from it. You also learn what you are <em>not</em>: positioning is as much about repelling bad-fit clients as attracting good ones.",
+    ready: "You can deliver a 30-second positioning statement that a non-technical business owner could repeat to their spouse. A stranger in your target market hears it and asks a follow-up question instead of nodding. You can name the two or three alternatives your prospects consider (including \u201cdo nothing\u201d and \u201chire a generalist\u201d) and why you win against each.",
+    practice: "Write your positioning statement using Dunford's components: competitive alternatives, unique capabilities, value, target-market characteristics. Then say it out loud to someone who is <em>not</em> in tech. If they can repeat the gist back, keep it. If they say \u201cso... IT stuff?\u201d, revise.",
+    startResources: [
+      { title: "Obviously Awesome", author: "April Dunford", url: "https://www.aprildunford.com/books", format: "book", time: "~4 hrs", desc: "The canonical 10-step positioning method. Written for practitioners; reads fast. Directly applicable to a one-person consultancy." },
+      { title: "Building a Sales Story That Wins", author: "April Dunford", url: "https://saasiest.com/april-dunford-building-a-sales-story-that-wins/", format: "article", time: "10 min", desc: "Compresses the sales-narrative argument: positioning drives the pitch, value before features, and \u201cwhy pick us over the alternatives.\u201d Good preview before committing to the book." },
+    ],
+    deeperResources: [
+      { title: "Sales Pitch", author: "April Dunford", url: "https://www.aprildunford.com/books", format: "book", time: "~4 hrs", desc: "Turns positioning into an eight-part sales narrative. The bridge between \u201cwho we are\u201d and \u201cwhat I say on the call.\u201d" },
+      { title: "The Challenger Sale", author: "Matthew Dixon & Brent Adamson", url: "https://www.penguinrandomhouse.com/books/192693/", format: "book", time: "~6 hrs", desc: "Why insight-led selling beats relationship-building in complex B2B; how to construct a commercial teaching point." },
+      { title: "10 Ways You Need to Change How You Think and Talk to Succeed at Sales", author: "First Round Review", url: "https://review.firstround.com/10-ways-you-need-to-change-how-you-think-and-talk-to-succeed-at-sales/", format: "article", time: "15 min", desc: "Mindset shifts for technical founders who find \u201cselling\u201d foreign." },
+    ]
+  },
+  {
+    id: 2, cls: "c7",
+    title: "Build Outbound that Gets Replies",
+    situation: "You have a shortlist of companies you could genuinely help, but no warm path into most of them. Waiting for referrals means waiting indefinitely. You draft a cold email, it reads like a resume, you send three, hear nothing, and conclude \u201coutbound does not work.\u201d",
+    changes: "You learn outbound as a system, not a personality test: build a target list from a written ICP, write messages that lead with a specific observed problem rather than your credentials, volume and follow-up with discipline, and track reply rate as the metric that matters. You also learn the consultant-specific variants: the referral ask, the \u201cI saw this at your company\u201d trigger-based message, and the content-led warm-up.",
+    ready: "You have a named list of 50+ target accounts matching a written ICP, a 3-touch sequence you have actually sent, and a reply-rate baseline. You can write a first-touch message in under 15 minutes because the positioning work (Capability 1) already did the heavy lifting.",
+    practice: "Write your ICP on one page (industry, size, trigger events, who buys, who blocks). Build a 50-account list from it. Write a 3-touch sequence where touch 1 references a specific observable problem, touch 2 adds one piece of proof, touch 3 is a graceful close. Send to 10 accounts this week. Record reply rate.",
+    startResources: [
+      { title: "Founding Sales", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~6 hrs", desc: "The whole early-stage outbound motion written for technical people: list building, messaging, sequences, and the metrics. The chapters on list-building and first-touch are directly usable." },
+      { title: "30 Minutes to President's Club \u2014 prospecting episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Hyper-tactical cold-call and cold-email breakdowns. Start with any \u201cprospecting\u201d episode; the formats are immediately stealable." },
+    ],
+    deeperResources: [
+      { title: "First Round Review sales essays", author: "First Round Review", url: "https://review.firstround.com/", format: "article", time: "15 min each", desc: "Repeated, well-edited coverage of the founder-as-salesperson motion, including when to keep it and when to hand off." },
+      { title: "Gong Labs research", author: "Gong", url: "https://www.gong.io/labs/", format: "article", time: "10 min each", desc: "What actually correlates with replies and wins across millions of recorded interactions \u2014 message structure and talk-ratio findings. Useful for de-guessing." },
+      { title: "Startup Sales Maturity Model & Founder Led Selling", author: "Pete Kazanjy", url: "https://www.youtube.com/watch?v=lAutzV21Gus", format: "video", time: "45 min", desc: "Kazanjy's deck-as-talk on the founder-led sales motion end to end, from the author of Founding Sales." },
+    ]
+  },
+  {
+    id: 3, cls: "c2",
+    title: "Run Discovery that Surfaces Pain",
+    situation: "A prospect says \u201cwe need help modernizing our systems\u201d and you spend the next 45 minutes explaining what you could do. You leave the call having talked for 80% of it, with no idea what the problem actually costs them, who else feels it, or whether they will spend money to fix it. You write a proposal anyway.",
+    changes: "You learn discovery as structured diagnosis: ask Situation and Problem questions briefly, then spend your time on Implication questions \u2014 what does this cost, what happens if it is not fixed, who else is affected? Top performers ask significantly more implication-type questions than average performers. You also learn to talk less: a discovery call where the prospect does most of the talking is the goal, and the ratio is observable in any call recording.",
+    ready: "You can run a 30-minute discovery where you speak less than 40% of the time and leave with: the problem in the prospect's own words, a rough cost of inaction, who owns it, and what they have already tried. You have a written question bank you actually use.",
+    practice: "Before your next discovery call, write out your Implication and Need-payoff questions in advance \u2014 do not wing it. After the call, score yourself: How many implication questions did you ask? What is the cost of the status quo in the prospect's words? Could you restate their problem without using your own vocabulary? Revise the question bank after every call.",
+    startResources: [
+      { title: "SPIN Selling", author: "Neil Rackham", url: "https://www.amazon.com/SPIN-Selling-Neil-Rackham/dp/0070511136", format: "book", time: "~6 hrs", desc: "The research-backed questioning methodology, based on analysis of 35,000+ sales calls. The Situation-Problem-Implication-Need-payoff spine is the backbone of discovery that does not feel like an audit." },
+      { title: "30 Minutes to President's Club \u2014 discovery episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Word-for-word question phrasings from top sellers. Faster to absorb than the book; use together." },
+    ],
+    deeperResources: [
+      { title: "The Challenger Sale", author: "Matthew Dixon & Brent Adamson", url: "https://www.penguinrandomhouse.com/books/192693/", format: "book", time: "~6 hrs", desc: "Adds teaching to questioning: bring a hypothesis about their business, use discovery to test it rather than to survey." },
+      { title: "Gong Labs research", author: "Gong", url: "https://www.gong.io/labs/", format: "article", time: "10 min each", desc: "Evidence on question counts, talk ratios, and what distinguishes winning discovery calls." },
+      { title: "First Round Review sales essays", author: "First Round Review", url: "https://review.firstround.com/", format: "article", time: "15 min each", desc: "Founder-led discovery stories: what to ask, what to record, and how early conversations shape the offer itself." },
+    ]
+  },
+  {
+    id: 4, cls: "c6",
+    title: "Quantify the Pain",
+    situation: "Your prospect agrees the problem is real. \u201cIt is a real time-suck,\u201d they say. Nobody has a number. Two months later the project stalls because the status quo \u2014 annoying but survivable \u2014 beat your proposal in the budget meeting. You had a problem story; you did not have a business case.",
+    changes: "You learn to convert pain into numbers the buyer already uses to make decisions: hours, error rates, revenue leakage, risk exposure. You learn to walk the implication chain out loud \u2014 \u201cif that is 4 hours a week per person across 12 people, that is ~2,500 hours a year; what is a loaded hour worth here?\u201d \u2014 and to co-build the number with the prospect so it is <em>their</em> number, not yours. This is the \u201cImplicate the Pain\u201d muscle in MEDDPICC and the source of every credible ROI case.",
+    ready: "For any active opportunity, you can state the cost of doing nothing in the prospect's own numbers, and the prospect has said the number out loud before you did. You can distinguish a nice-to-have from a funded priority by whether a metric is attached.",
+    practice: "Take your last three proposals. For each, write: the quantified cost of the status quo (or \u201cnot quantified\u201d). For the next live opportunity, co-build one number with the prospect using their inputs. Put the number and its assumptions in the proposal.",
+    startResources: [
+      { title: "SPIN Selling \u2014 Implication & Need-payoff chapters", author: "Neil Rackham", url: "https://www.amazon.com/SPIN-Selling-Neil-Rackham/dp/0070511136", format: "book", time: "~2 hrs", desc: "The mechanics of making the status quo expensive: the magic is not the acronym, it is building implications that make staying put costly." },
+      { title: "MEDDPICC Explained: A Practical Guide", author: "Closing Foundry", url: "https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders", format: "article", time: "20 min", desc: "Includes the \u201cImplicate the Pain\u201d element with buyer-centered questioning and quantification of current vs. future state \u2014 and warns against turning qualification into an interrogation." },
+    ],
+    deeperResources: [
+      { title: "Gong Labs research", author: "Gong", url: "https://www.gong.io/labs/", format: "article", time: "10 min each", desc: "Evidence on when and how value/ROI language shows up in winning deals." },
+      { title: "Sales Pitch \u2014 value chapters", author: "April Dunford", url: "https://www.aprildunford.com/books", format: "book", time: "~2 hrs", desc: "Mapping differentiated value to measurable outcomes the buyer already tracks; the value story should come from positioning, not a generic ROI calculator." },
+      { title: "The Challenger Sale \u2014 commercial teaching", author: "Dixon & Adamson", url: "https://www.penguinrandomhouse.com/books/192693/", format: "book", time: "~6 hrs", desc: "Constructing the insight that reframes a nuisance into a quantified business risk." },
+    ]
+  },
+  {
+    id: 5, cls: "c5",
+    title: "Find the Real Buyer and Build a Champion",
+    situation: "You have had three great calls. Everyone you have talked to likes you. Then silence. What you did not know: your contact cannot approve a $60K engagement, the CFO has a competing initiative, and nobody inside the company is actively selling your work when you are not in the room. A friendly contact is not a champion, and an enthusiast is not an economic buyer.",
+    changes: "You learn to map the buying unit early: who feels the pain, who owns the budget, who can veto, and who will advocate. You learn the test for a real champion \u2014 they <em>sell when you are absent</em>, give you access to power, and share internal information a polite contact will not. You learn to convert a friendly contact into a champion (co-build the business case, arm them with a one-pager for their boss) or to recognize within two calls that you do not have one.",
+    ready: "For every active deal you can answer: who signs, who approves budget, who can kill it, and who is actively selling for you internally \u2014 with evidence, not hope. In owner-operated businesses the champion and economic buyer are often the same person, which shortens everything; your discipline is detecting that <em>fast</em> in multi-stakeholder situations.",
+    practice: "For your most active opportunity, draw the map: Economic Buyer / Champion / Influencers / Veto-holders, with one piece of evidence per box. Identify the weakest box and design your next meeting to strengthen it (usually: ask your champion for a joint meeting with their boss).",
+    startResources: [
+      { title: "MEDDICC", author: "Andy Whyte", url: "https://meddicc.com/meddicc-the-book", format: "book", time: "~4 hrs", desc: "The Champion and Economic Buyer letters, explained by a practitioner, with the behaviors that separate real champions from friendly contacts." },
+      { title: "MEDDPICC Explained: A Practical Guide", author: "Closing Foundry", url: "https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders", format: "article", time: "20 min", desc: "Practical definitions of Economic Buyer and Champion with the evidence standard for each." },
+    ],
+    deeperResources: [
+      { title: "MEDDPICC: the complete guide, tools and coaching", author: "Closing Foundry", url: "https://www.closingfoundry.com/meddpicc", format: "article", time: "30 min", desc: "Element definitions plus deal-health scorecard; the buyer-stakeholder mapping drill lives here." },
+      { title: "Founding Sales \u2014 stakeholder chapters", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~2 hrs", desc: "Mapping buying committees when you are the one in the seat, including how to ask for access to power without burning the contact." },
+      { title: "30 Minutes to President's Club \u2014 multi-threading episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Tactics for building coverage across a buying committee when your single contact is not enough." },
+    ]
+  },
+  {
+    id: 6, cls: "c3",
+    title: "Qualify with MEDDPICC",
+    situation: "It is the end of the quarter, or your runway. You have four \u201cactive\u201d opportunities and you tell yourself two will close. Honestly, you do not know \u2014 because \u201cthey liked the demo\u201d is not evidence, and you never wrote down what was missing. Deals you counted on slip; deals you wrote off close.",
+    changes: "You learn a qualification framework as a <em>diagnostic</em>, not a CRM checklist: after every meaningful interaction, score each MEDDPICC element green/yellow/red, and let the reds tell you the next best action. MEDDPICC = Metrics, Economic Buyer, Decision Criteria, Decision Process, Paper Process, Implicate the Pain, Champion, Competition. It originated at PTC in the 1990s and evolved through MEDDIC, MEDDICC, MEDDPICC for modern cloud-procurement realities. Two disciplines matter most: qualifying <em>out</em>, and treating it as dynamic \u2014 each letter evolves as the buyer's reality changes, so you update it continuously rather than filling it in once.",
+    ready: "You can produce a one-page MEDDPICC scorecard for any opportunity, with evidence (a name, a number, a date) behind each letter \u2014 and you have killed at least one deal on paper for missing elements. You commit only deals with buyer evidence across the letters and move deals back when evidence weakens. Adapted for solo-consultancy deal sizes: MEDDIC alone is usually enough, and the skill is knowing which letters are load-bearing in <em>your</em> deals.",
+    practice: "Build a personal one-page MEDDPICC scorecard (8 rows, evidence column, red/yellow/green). Backfill it for your three most active opportunities. Be honest: \u201cI think the CFO would approve\u201d is red, not green, without evidence. Pick the reddest element and design your next conversation to turn it yellow. Kill anything with 4+ reds.",
+    startResources: [
+      { title: "MEDDICC", author: "Andy Whyte", url: "https://meddicc.com/meddicc-the-book", format: "book", time: "~4 hrs", desc: "The canonical book on the framework; deconstructs each letter into actionable steps from a working seller, including qualify-out discipline." },
+      { title: "What Is MEDDPICC? Definition, Letters & Examples", author: "AmpUp", url: "https://www.ampup.ai/resources/what-is-meddpicc", format: "article", time: "15 min", desc: "Clean per-letter definitions with what \u201cgood evidence\u201d looks like for each element; includes the MEDDIC vs MEDDPICC vs BANT comparison for sizing the framework to your deal size." },
+    ],
+    deeperResources: [
+      { title: "MEDDPICC Explained: A Practical Guide", author: "Closing Foundry", url: "https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders", format: "article", time: "20 min", desc: "Framework vs. process vs. method; the qualification-win rate connection; the \u201cnot an interrogation\u201d caution." },
+      { title: "MEDDPICC: the complete guide, tools and coaching", author: "Closing Foundry", url: "https://www.closingfoundry.com/meddpicc", format: "article", time: "30 min", desc: "Element definitions plus a deal-health scorecard you can adapt as your own template." },
+      { title: "MEDDIC vs MEDDPICC vs BANT", author: "AmpUp", url: "https://www.ampup.ai/resources/meddic-vs-meddpicc-vs-bant", format: "article", time: "10 min", desc: "Choosing framework weight for deal size \u2014 relevant when your engagements are $15K, not $500K." },
+    ]
+  },
+  {
+    id: 7, cls: "c8",
+    title: "Write Proposals that Close (and Survive the Paper Process)",
+    situation: "You send a proposal after a good call. Then: silence for two weeks, \u201ccan you send it as a PDF,\u201d \u201cour accountant needs to look at it,\u201d \u201clegal wants changes to the MSA.\u201d The deal dies not from disagreement but from friction. On your side the proposal is a pricing document; on their side it is the artifact that has to justify the spend to someone who was not on the call.",
+    changes: "You learn that the proposal is a sales document, not an invoice: it restates the problem in the buyer's words, quantifies the cost of the status quo (Capability 4), names the alternatives considered, and presents your approach as the logical choice. You learn the structure that lets a non-technical approver say yes without you in the room \u2014 which is the whole job, since the champion has to re-sell it internally. You also learn the mundane machinery: what signature authority looks like in your target clients, MSA/SOW structure, deposits and payment terms, and how to set a mutual action plan with dates so \u201cpaper process\u201d does not become a black hole.",
+    ready: "Every proposal you send has: problem restatement, quantified pain, options (not one price), a clear \u201cwhat happens next\u201d section, and a follow-up date already agreed before you sent it. You know, before proposing, whether your contact can actually sign at that amount.",
+    practice: "Rewrite your standard proposal template: page 1 is the problem and its cost in their numbers; the pricing is optioned (good/better/best); the last page is a mutual action plan with dates. For the next proposal, agree the review date and decision-maker <em>before</em> sending.",
+    startResources: [
+      { title: "Sales Pitch", author: "April Dunford", url: "https://www.aprildunford.com/books", format: "book", time: "~4 hrs", desc: "The eight-part sales narrative structure; the proposal and pitch should tell one story, and Dunford shows how positioning drives it." },
+      { title: "Founding Sales \u2014 closing & paperwork chapters", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~3 hrs", desc: "The practical, founder-in-the-seat version: proposals, quotes, contracting mechanics, and keeping momentum to signature." },
+    ],
+    deeperResources: [
+      { title: "MEDDPICC: the complete guide (Paper Process)", author: "Closing Foundry", url: "https://www.closingfoundry.com/meddpicc", format: "article", time: "15 min", desc: "Why paper process quietly kills \u201cready to sign\u201d deals, and how mutual action plans de-risk it." },
+      { title: "30 Minutes to President's Club \u2014 proposal/committee episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Tactics for multi-threading proposals and building the buyer-side business case." },
+      { title: "Never Split the Difference", author: "Chris Voss", url: "https://www.amazon.com/Never-Split-Difference-Negotiating-As-If/dp/0062407805", format: "book", time: "~6 hrs", desc: "Useful once pricing conversations start appearing; tactical empathy, labeling, and calibrated questions for proposal objections." },
+    ]
+  },
+  {
+    id: 8, cls: "c9",
+    title: "Negotiate without Discounting",
+    situation: "\u201cThis is more than we budgeted.\u201d You panic, discount 20%, and the deal closes at a margin that makes the work feel heavy. Worse: the discount taught the client that your first price was fiction, and the next engagement starts from the discounted anchor. For a solo consultant, every point of discount is pure margin \u2014 there is no sales team to absorb it.",
+    changes: "You learn negotiation as a conversation about <em>value and scope</em>, not a haggle over price. You learn to respond to price pressure by reducing scope or trading (payment terms, start date, a case study) rather than cutting rate; to stay silent after naming a number; to ask calibrated questions (\u201cwhat would need to be true for this to work?\u201d) instead of defending the price; and to recognize when \u201cwe cannot afford it\u201d really means \u201cI am not convinced of the value yet\u201d \u2014 which sends you back to Capability 4, not to your rate card.",
+    ready: "You have a written fallback ladder (what you trade before you ever touch price) and you have held your rate at least once under direct pressure. You can distinguish a budget objection (fixable via scope or timing) from a value objection (back to discovery) from a polite no (move on).",
+    practice: "Write your trade ladder for the next pricing conversation: 3 things you can give (payment terms, scope reduction, pilot pricing for a <em>smaller</em> first phase) and your walk-away. Practice saying your number, then closing your mouth \u2014 literally rehearse the pause. Next discount request: respond with a scope trade, not a rate cut.",
+    startResources: [
+      { title: "Never Split the Difference", author: "Chris Voss", url: "https://www.amazon.com/Never-Split-Difference-Negotiating-As-If/dp/0062407805", format: "book", time: "~6 hrs", desc: "Hostage-negotiation tactics adapted to business: tactical empathy, mirroring, labeling, calibrated questions, and the \u201cthat's right\u201d moment. The most immediately usable negotiation book for people who hate haggling." },
+      { title: "30 Minutes to President's Club \u2014 negotiation episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Word-for-word responses to \u201cit is too expensive,\u201d from working sellers rather than theorists." },
+    ],
+    deeperResources: [
+      { title: "Gong Labs research", author: "Gong", url: "https://www.gong.io/labs/", format: "article", time: "10 min each", desc: "Evidence on discounting behavior and what actually correlates with closed-won at better prices." },
+      { title: "Sales Pitch \u2014 value chapters", author: "April Dunford", url: "https://www.aprildunford.com/books", format: "book", time: "~2 hrs", desc: "The structural fix for discount pressure: differentiated value makes price conversations shorter. If prospects do not perceive differentiation, price is the only lever they have." },
+    ]
+  },
+  {
+    id: 9, cls: "c4",
+    title: "Manage Pipeline and Forecast Honestly",
+    situation: "You are a solo operator: pipeline is a list of names in a notes app, some of them months old. Some weeks you are too busy to sell and the future quietly empties; other weeks you have nothing <em>but</em> selling to do because work just ended. You cannot answer the only question that matters for a consultancy: \u201cgiven current pipeline, what will revenue be in 8 weeks?\u201d",
+    changes: "You learn to run pipeline as a small, honest system: defined stages with exit criteria (a stage changes when the <em>buyer</em> does something, not when you do), a weekly pipeline review against MEDDPICC evidence, and a personal forecast you would defend \u2014 commit only deals with buyer evidence, and move deals back when evidence weakens. You learn the solo-consultant rhythms: a fixed weekly slot for pipeline work regardless of how busy delivery is, and activity floors (touches per week) so a busy delivery quarter does not silently empty next quarter's revenue.",
+    ready: "You have a stage definition per deal with a last-verified date, and your \u201ccommit\u201d deals are ones where the buyer has done something concrete in the last 14 days. You can state your win rate and average cycle length from real data.",
+    practice: "Define 4 stages for your consultancy with buyer-action exit criteria (e.g., Stage 2 moves to 3 only when: quantified pain stated by buyer AND economic buyer identified). Move your current opportunities to honest stages with last-verified dates. Put a recurring 45-minute pipeline review on your calendar \u2014 same time every week.",
+    startResources: [
+      { title: "MEDDPICC Explained: A Practical Guide", author: "Closing Foundry", url: "https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders", format: "article", time: "20 min", desc: "The forecast-rigor argument: qualification discipline as the basis of commit decisions, dynamic rather than point-in-time." },
+      { title: "Founding Sales \u2014 pipeline chapters", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~2 hrs", desc: "The solo-operator version: simple stage definitions, CRM minimalism, and weekly pipeline review cadence." },
+    ],
+    deeperResources: [
+      { title: "Predictable Revenue", author: "Aaron Ross", url: "https://www.amazon.com/Predictable-Revenue-Business-Practices-Companies/dp/0984380213", format: "book", time: "~5 hrs", desc: "The outbound-to-pipeline system classic; more relevant at scale, useful for the metrics vocabulary." },
+      { title: "Gong Labs research", author: "Gong", url: "https://www.gong.io/labs/", format: "article", time: "10 min each", desc: "Evidence on deal-stall signals and forecast accuracy from real deal data." },
+      { title: "First Round Review sales essays", author: "First Round Review", url: "https://review.firstround.com/", format: "article", time: "15 min each", desc: "Pipeline management from the founder's seat \u2014 including the failure modes of hiring sales help too early." },
+    ]
+  },
+  {
+    id: 10, cls: "c10",
+    title: "Turn Deals into Referrals and Second Deals",
+    situation: "A project ends well. The client is happy. You say \u201clet me know if you hear of anyone!\u201d and move on. Six months later you are cold again, starting outbound from zero \u2014 even though the single richest source of new work (a delighted client with a network full of people like them) was sitting right there, unasked.",
+    changes: "You learn to engineer the end of the engagement: a closing review that quantifies delivered value (feeding your positioning and future proposals), a structured referral ask at the moment of maximum goodwill, a reference or case-study agreement while enthusiasm is fresh, and a scheduled re-engagement cadence. You also learn the second-deal lens: the expansion conversation (\u201cnow that X works, the adjacent problem Y is much cheaper to fix\u201d) is often easier to win than any new client.",
+    ready: "Every completed engagement ends with four artifacts: a results summary with numbers, a referral ask (made, not implied), a usable testimonial or case study, and a calendar reminder for a check-in in 90 days. Repeat and referral business is a visible line in your pipeline (Capability 9), not a pleasant accident.",
+    practice: "Pick your best engagement from the last 2 years. Write the results summary you never wrote (with numbers). Send it to the client with a specific referral ask (\u201cwho are two people you know with the same problem?\u201d) and offer to help make an introduction easy for them. Schedule the 90-day follow-up.",
+    startResources: [
+      { title: "The Trusted Advisor", author: "Maister, Green & Galford", url: "https://www.amazon.com/Trusted-Advisor-David-H-Maister/dp/0684837094", format: "book", time: "~5 hrs", desc: "The trust framework for long-horizon client relationships; the basis for turning one project into a practice." },
+      { title: "30 Minutes to President's Club \u2014 expansion episodes", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "Tactical asks for referrals and expansion conversations that do not feel desperate." },
+    ],
+    deeperResources: [
+      { title: "Founding Sales \u2014 customer-success chapters", author: "Pete Kazanjy", url: "https://www.amazon.com/dp/1734505117", format: "book", time: "~2 hrs", desc: "The founder's version: turning early customers into references, case studies, and a repeatable pipeline source." },
+      { title: "First Round Review sales essays", author: "First Round Review", url: "https://review.firstround.com/", format: "article", time: "15 min each", desc: "Recurring, well-edited treatment of referral motions and client relationships in founder-led sales." },
+    ]
+  },
+  {
+    id: 11, cls: "c0",
+    title: "Use AI as a Sales Leverage Tool",
+    situation: "You are one person. Top sellers have managers, enablement teams, call-coaching tools, and researchers. You have a laptop and a calendar. Meanwhile your prospects are increasingly using AI to research vendors before they ever talk to you \u2014 which changes what your first conversation has to accomplish.",
+    changes: "You learn to use AI for the things sales teams pay other humans to do: pre-call research (summarize a target company's public footprint and generate hypothesis pain), role-play (AI plays a skeptical owner-operator while you practice discovery questions), deal review (paste call notes, get a MEDDPICC scorecard draft with reds highlighted), and first-draft outreach (positioning-aware, then humanized). You also learn the boundary: AI drafts and reviews, <em>you</em> say the words live. The reps are the point \u2014 using AI to skip practice is using AI to stay bad.",
+    ready: "Every discovery call has an AI-generated research brief beforehand and a MEDDPICC scoring pass afterward. You have done at least one AI role-play before a difficult conversation, and it changed what you said in the real one.",
+    practice: "Build three reusable prompts: (1) pre-call research brief from a company URL, (2) discovery role-play partner with an objection style you are weak against, (3) MEDDPICC scorecard generator from raw call notes. Use all three on your next real opportunity, then compare the AI's scorecard against your own honest one.",
+    startResources: [
+      { title: "MEDDPICC Explained: A Practical Guide", author: "Closing Foundry", url: "https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders", format: "article", time: "20 min", desc: "Includes the argument that LLMs can remove the deal-inspection burden \u2014 scoring every deal, not just the biggest bets." },
+      { title: "30 Minutes to President's Club", author: "Cegelski & Farrokh", url: "https://www.30mpc.com/", format: "podcast", time: "30 min/ep", desc: "The tactics are the material AI works on: pick an episode, role-play it with an AI in the prospect's seat, then debrief." },
+    ],
+    deeperResources: [
+      { title: "Gong Labs research", author: "Gong", url: "https://www.gong.io/labs/", format: "article", time: "10 min each", desc: "The large-scale research on what works in real sales interactions \u2014 the closest thing to evidence in a field of opinion. Your AI deal-review prompts should encode these findings." },
+      { title: "First Round Review sales essays", author: "First Round Review", url: "https://review.firstround.com/", format: "article", time: "15 min each", desc: "Founder-sales essays to mine for role-play scenarios and objection lists." },
+      { title: "What Is MEDDPICC? (AI call analysis section)", author: "AmpUp", url: "https://www.ampup.ai/resources/what-is-meddpicc", format: "article", time: "10 min", desc: "How AI call analysis scores deals against the framework automatically \u2014 the pattern for your own deal-review prompts." },
+    ]
+  }
 ];
 
-const KEY = "slp-progress";
-const state = JSON.parse(localStorage.getItem(KEY) || "{}");
-let filter = "all", query = "";
+const CHEVRON_SVG = '<svg class="subsection-chevron" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>';
 
-function save() { localStorage.setItem(KEY, JSON.stringify(state)); render(); }
+let progress = JSON.parse(localStorage.getItem('slp-cap-progress') || '{}');
+let formatFilter = 'all';
 
-function render() {
-  const box = document.getElementById("cards");
-  box.innerHTML = "";
-  const doneCount = CAPS.filter(c => state[c.slug]).length;
-  document.getElementById("prog").innerHTML = `<b>${doneCount}</b>/${CAPS.length} complete`;
-  for (const c of CAPS) {
-    if (filter === "gateway" && c.group !== "gateway") continue;
-    if (filter === "todo" && state[c.slug]) continue;
-    if (query && !(c.title + " " + c.desc).toLowerCase().includes(query)) continue;
-    const el = document.createElement("div");
-    el.className = "card";
-    const checks = [`<span class="tag">${c.n}</span><h2 style="display:inline"><a href="${c.slug}.md">${c.title}</a></h2>`,
-      `<div class="desc">${c.desc}</div>`,
-      `<div class="checks"><span class="check ${state[c.slug] ? "done" : ""}" data-s="${c.slug}">${state[c.slug] ? "✓ Practiced" : "Mark practiced"}</span></div>`].join("");
-    el.innerHTML = checks;
-    box.appendChild(el);
+function saveProgress() { localStorage.setItem('slp-cap-progress', JSON.stringify(progress)); }
+
+function resetProgress() {
+  if (confirm('Reset all progress?')) {
+    progress = {};
+    saveProgress();
+    render();
   }
-  box.querySelectorAll(".check").forEach(b => b.onclick = () => {
-    const s = b.dataset.s;
-    state[s] = !state[s]; if (!state[s]) delete state[s];
-    save();
+}
+
+function resourceHTML(r) {
+  const hidden = formatFilter !== 'all' && r.format !== formatFilter;
+  return `<div class="resource${hidden ? ' hidden' : ''}" data-format="${r.format}">
+    <span class="format-badge ${r.format}">${r.format}</span>
+    <div class="resource-info">
+      <div class="resource-title"><a href="${r.url}" target="_blank" rel="noopener">${r.title}</a>${r.summaryUrl ? ` (<a href="${r.summaryUrl}" target="_blank" rel="noopener">summary</a>)` : ''}</div>
+      <div class="resource-author">${r.author}</div>
+      <div class="resource-desc">${r.desc}</div>
+    </div>
+    <span class="resource-time">${r.time}</span>
+  </div>`;
+}
+
+function subsection(id, label, count, content) {
+  return `<div class="subsection" aria-expanded="false" id="${id}">
+    <button class="subsection-toggle" aria-controls="${id}-body" aria-expanded="false" onclick="toggleSub('${id}')">
+      ${CHEVRON_SVG}
+      ${label}
+      <span class="subsection-count">${count}</span>
+    </button>
+    <div class="subsection-body" id="${id}-body" role="region" aria-labelledby="${id}">
+      ${content}
+    </div>
+  </div>`;
+}
+
+function getCapabilityCard(id) {
+  return document.getElementById(`capability-${id}`);
+}
+
+const capabilityGlowTimers = new WeakMap();
+const capabilityJumpOffset = 20;
+
+function highlightCapabilityCard(card) {
+  const priorTimer = capabilityGlowTimers.get(card);
+  if (priorTimer) window.clearTimeout(priorTimer);
+
+  card.classList.remove('is-jump-target');
+  void card.offsetWidth;
+  card.classList.add('is-jump-target');
+
+  const timer = window.setTimeout(function() {
+    card.classList.remove('is-jump-target');
+    capabilityGlowTimers.delete(card);
+  }, 3400);
+
+  capabilityGlowTimers.set(card, timer);
+}
+
+function scrollCapabilityCardIntoView(card) {
+  const container = document.querySelector('.content-pane');
+
+  if (!container || !container.contains(card)) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    return;
+  }
+
+  const containerRect = container.getBoundingClientRect();
+  const cardRect = card.getBoundingClientRect();
+  const targetTop = container.scrollTop + (cardRect.top - containerRect.top) - capabilityJumpOffset;
+
+  container.scrollTo({
+    top: Math.max(targetTop, 0),
+    behavior: 'smooth'
   });
 }
 
-document.getElementById("q").oninput = e => { query = e.target.value.toLowerCase(); render(); };
-document.querySelectorAll(".filter").forEach(b => b.onclick = () => {
-  document.querySelectorAll(".filter").forEach(x => x.classList.remove("on"));
-  b.classList.add("on"); filter = b.dataset.f; render();
+function jumpToCapability(id) {
+  const card = getCapabilityCard(id);
+  if (!card) return false;
+
+  scrollCapabilityCardIntoView(card);
+  card.setAttribute('tabindex', '-1');
+  card.focus({ preventScroll: true });
+  highlightCapabilityCard(card);
+
+  if (window.history && window.history.replaceState) {
+    window.history.replaceState(null, '', `#capability-${id}`);
+  }
+
+  return true;
+}
+
+function bindMermaidNodeJumps() {
+  const nodes = document.querySelectorAll('#capability-graph svg g.node[id*="flowchart-C"]');
+  if (!nodes.length) return false;
+
+  nodes.forEach(node => {
+    if (node.dataset.jumpBound === 'true') return;
+
+    const match = node.id.match(/flowchart-C(\d+)-/);
+    if (!match) return;
+
+    const capabilityId = Number(match[1]);
+    if (!getCapabilityCard(capabilityId)) return;
+
+    node.dataset.jumpBound = 'true';
+    node.classList.add('clickable');
+    node.setAttribute('role', 'link');
+    node.setAttribute('tabindex', '0');
+    node.setAttribute('aria-label', `Jump to Capability ${capabilityId}`);
+
+    node.addEventListener('click', function() {
+      jumpToCapability(capabilityId);
+    });
+
+    node.addEventListener('keydown', function(event) {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      jumpToCapability(capabilityId);
+    });
+  });
+
+  return true;
+}
+
+function watchMermaidNodeJumps() {
+  const graph = document.getElementById('capability-graph');
+  if (!graph) return;
+
+  const tryBind = function() {
+    return bindMermaidNodeJumps();
+  };
+
+  if (tryBind()) return;
+
+  const observer = new MutationObserver(function() {
+    if (!tryBind()) return;
+    observer.disconnect();
+  });
+
+  observer.observe(graph, { childList: true, subtree: true });
+}
+
+function render() {
+  const container = document.getElementById('capabilities');
+  container.innerHTML = DATA.slice().sort((a, b) => a.id - b.id).map(cap => {
+    const isDone = progress[cap.id];
+    const startCount = cap.startResources.filter(r => formatFilter === 'all' || r.format === formatFilter).length;
+    const deeperCount = cap.deeperResources.filter(r => formatFilter === 'all' || r.format === formatFilter).length;
+
+    const startHTML = `<div class="resources">${cap.startResources.map(resourceHTML).join('')}</div>`;
+    const deeperHTML = `<div class="resources">${cap.deeperResources.map(resourceHTML).join('')}</div>`;
+    const practiceHTML = `<div class="practice-box">${cap.practice}</div>`;
+
+    const capLabel = `Capability ${cap.id}`;
+    const capNum = cap.id;
+
+    return `<article id="capability-${cap.id}" class="capability${isDone ? ' completed' : ''}" role="listitem" aria-label="${capLabel}: ${cap.title}" data-capability-id="${cap.id}">
+      <div class="cap-header">
+        <div class="cap-number ${cap.cls}" aria-hidden="true">${capNum}</div>
+        <div class="cap-header-content">
+          <div class="cap-title-row">
+            <h3 class="cap-title">${cap.title}</h3>
+            <input type="checkbox" class="cap-check" aria-label="Mark ${capLabel} as complete" ${isDone ? 'checked' : ''} onchange="toggleCheck(${cap.id}, this.checked)">
+          </div>
+        </div>
+      </div>
+      <div class="cap-body">
+        <div class="section-label">The situation</div>
+        <p class="prose">${cap.situation}</p>
+        <div class="section-label">What changes</div>
+        <p class="prose">${cap.changes}</p>
+        <div class="section-label">You're ready when</div>
+        <div class="ready-box">${cap.ready}</div>
+      </div>
+      ${subsection(`cap${cap.id}-start`, 'Start here', startCount + ' resource' + (startCount !== 1 ? 's' : ''), startHTML)}
+      ${subsection(`cap${cap.id}-deeper`, 'Go deeper', deeperCount + ' resource' + (deeperCount !== 1 ? 's' : ''), deeperHTML)}
+      ${subsection(`cap${cap.id}-practice`, 'Practice This', '', practiceHTML)}
+    </article>`;
+  }).join('');
+}
+
+function toggleSub(id) {
+  const el = document.getElementById(id);
+  const expanded = el.getAttribute('aria-expanded') === 'true';
+  el.setAttribute('aria-expanded', !expanded);
+  el.querySelector('.subsection-toggle').setAttribute('aria-expanded', !expanded);
+}
+
+function toggleCheck(id, checked) {
+  progress[id] = checked;
+  saveProgress();
+  // Update border without full re-render
+  const capLabel = `Capability ${id}`;
+  const card = document.querySelector(`[aria-label="${capLabel}: ${DATA.find(c=>c.id===id).title}"]`);
+  if (card) card.classList.toggle('completed', checked);
+}
+
+// --- Filters ---
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    formatFilter = btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    btn.setAttribute('aria-pressed', 'true');
+    render();
+  });
 });
-document.getElementById("reset").onclick = () => { localStorage.removeItem(KEY); state && Object.keys(state).forEach(k => delete state[k]); render(); };
+
 render();
+
+// --- Theme toggle ---
+(function() {
+  var pref = localStorage.getItem('theme-preference') || 'auto';
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function applyTheme(p) {
+    pref = p;
+    var theme = p === 'night' ? 'dark' : p === 'day' ? 'light' : mq.matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('data-theme-preference', p);
+    localStorage.setItem('theme-preference', p);
+    document.querySelectorAll('[data-theme-btn]').forEach(function(b) {
+      var val = b.getAttribute('data-theme-btn');
+      b.setAttribute('aria-pressed', val === (p === 'day' ? 'day' : p === 'night' ? 'night' : 'auto') ? 'true' : 'false');
+    });
+  }
+
+  applyTheme(pref);
+
+  document.querySelectorAll('[data-theme-btn]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      applyTheme(btn.getAttribute('data-theme-btn'));
+    });
+  });
+
+  mq.addEventListener('change', function() {
+    if (pref === 'auto') applyTheme('auto');
+  });
+
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      document.documentElement.classList.add('transitions-enabled');
+    });
+  });
+})();
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({
+  startOnLoad: false,
+  securityLevel: 'loose',
+  flowchart: {
+    curve: 'basis',
+    padding: 18,
+    htmlLabels: false,
+    nodeSpacing: 24,
+    rankSpacing: 36,
+    useMaxWidth: true
+  }
+});
+
+await mermaid.run({
+  querySelector: '#capability-graph .mermaid'
+});
+
+watchMermaidNodeJumps();
 </script>
 </body>
 </html>

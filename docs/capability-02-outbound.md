@@ -21,6 +21,7 @@
 |----------|--------|------|-------------|
 | [Founder-led sales essays](https://review.firstround.com/) — First Round Review | Article collection | 15 min each | Repeated, well-edited coverage of the founder-as-salesperson motion, including when to keep it and when to hand off. |
 | [Gong Labs research](https://www.gong.io/labs/) | Data essays | 10 min each | What actually correlates with replies and wins across millions of recorded interactions — e.g., message structure and talk-ratio findings. Useful for de-guessing. |
+| [Startup Sales Maturity Model & Founder Led Selling](https://www.youtube.com/watch?v=lAutzV21Gus) — Pete Kazanjy ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/startup-sales-maturity-model-founder-led-selling-pete-kazanjy.md)) | Video | 45 min | Kazanjy's deck-as-talk on the founder-led sales motion end to end, from the author of Founding Sales. |
 | *Fanatical Prospecting* — Jeb Blount | Book | ~6 hrs | Pipeline discipline and the psychology of consistent daily outreach, when volume is your problem rather than messaging. |
 
 ### Practice This

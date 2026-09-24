@@ -13,7 +13,7 @@
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
 | [Positioning to Unlock Growth](https://portfolioresources.summitpartners.com/post/positioning-with-april-dunford) — April Dunford | Webinar | 60 min | The second half is effectively a masterclass on the sales narrative — how positioning becomes the story a proposal tells, with live Q&A [7]. |
-| [30 Minutes to President's Club — proposal/committee episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Tactics for multi-threading proposals and building the buyer-side business case. |
+| [Multithreading Masterclass: The Secret to Selling Deals at Power](https://www.30mpc.com/episodes/multithreading-masterclass-the-secret-to-selling-deals-at-power) — 30MPC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/multithreading-masterclass-30mpc.md)) | Video | 47 min | A single canonical episode on multi-threading and mutual action plans so proposals survive the paper process and close at power. |
 
 ### Go deeper
 

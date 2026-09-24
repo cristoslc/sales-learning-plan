@@ -13,7 +13,7 @@
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
 | [Never Split the Difference — Talks at Google](https://www.youtube.com/watch?v=guZa7mQV1l0) — Chris Voss ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/never-split-the-difference-chris-voss-talks-at-google.md)) | Video | 55 min | Voss delivers the core of the book himself: people are not rational, compromise is overrated, calibrated questions beat demands. Watch before reading. |
-| [30 Minutes to President's Club — negotiation episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Word-for-word responses to "it's too expensive," from working sellers rather than theorists. |
+| [Negotiation Masterclass: 4 Levers Negotiating Framework](https://www.30mpc.com/episodes/negotiation-masterclass-4-levers-negotiating-framework) — 30MPC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/negotiation-masterclass-4-levers-30mpc.md)) | Video | 32 min | Trade, don't discount: the 4 Levers response to "it's too expensive" and the end-of-quarter discount slip. |
 
 ### Go deeper
 

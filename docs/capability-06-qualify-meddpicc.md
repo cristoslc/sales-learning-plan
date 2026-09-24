@@ -15,7 +15,7 @@
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
 | [What Is MEDDPICC? Definition, Letters & Examples](https://www.ampup.ai/resources/what-is-meddpicc) — AmpUp | Article | 15 min | Clean per-letter definitions with what "good evidence" looks like for each element; includes the MEDDIC vs MEDDPICC vs BANT comparison for sizing the framework to your deal size [4]. |
-| [Key Takeaways: MEDDICC Value](https://meddicc.com/resources/key-takeaways-meddicc-value) — Andy Whyte | Webinar | 60 min | Whyte's own framing of product vs. ROI vs. value selling, and why MEDDPICC works as the common language across the customer lifecycle. Free from meddicc.com. |
+| [Key Takeaways: MEDDICC Value](https://meddicc.com/resources/key-takeaways-meddicc-value) — Andy Whyte ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/meddicc-value-key-takeaways-andy-whyte.md)) | Webinar | 60 min | Whyte's own framing of product vs. ROI vs. value selling, and why MEDDPICC works as the common language across the customer lifecycle. Free from meddicc.com. |
 
 ### Go deeper
 

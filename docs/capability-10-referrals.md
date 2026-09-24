@@ -13,7 +13,7 @@
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
 | [Being Right Isn't Enough](https://about.davidmaister.com/articles/17/12/) — David Maister | Article | 10 min | The trust equation — credibility, reliability, intimacy, low self-orientation — in the co-author's own words. Free distillation of the book's core. |
-| [30 Minutes to President's Club — expansion episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Tactical asks for referrals and expansion conversations that don't feel desperate. |
+| [The Upsell, Expansion and Renewal Masterclass](https://www.30mpc.com/episodes/the-upsell-expansion-and-renewal-masterclass) — 30MPC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/upsell-expansion-renewal-masterclass-30mpc.md)) | Video | 30 min | Prove value to build expansion pipeline, own the executive relationship, and engineer referrals and renewals. |
 
 ### Go deeper
 

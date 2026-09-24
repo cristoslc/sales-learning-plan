@@ -13,7 +13,7 @@
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
 | [MEDDPICC Explained: A Practical Guide](https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders) — Closing Foundry | Article | 20 min | Practical definitions of Economic Buyer and Champion with the evidence standard for each [3]. |
-| [The Formula Behind 25 Presidents Clubs](https://meddicc.com/meddicc-media/masters-of-meddicc-lucy-williams-jones-2026) — Masters of MEDDICC | Podcast | 45 min | Champions are a spectrum, not binary: power, influence, and a personal win vs. a merely available coach. Also: engage the Economic Buyer before you need them. |
+| [The Formula Behind 25 Presidents Clubs](https://meddicc.com/meddicc-media/masters-of-meddicc-lucy-williams-jones-2026) — Masters of MEDDICC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/formula-behind-25-presidents-clubs-masters-of-meddicc.md)) | Podcast | 45 min | Champions are a spectrum, not binary: power, influence, and a personal win vs. a merely available coach. Also: engage the Economic Buyer before you need them. |
 
 ### Go deeper
 

@@ -14,11 +14,13 @@
 |----------|--------|------|-------------|
 | [30 Minutes to President's Club — discovery episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Word-for-word question phrasings from top sellers. The fastest way to hear what good discovery sounds like. |
 | [How to Move from Feature Selling to Gap Selling](https://gtmnow.com/gap-selling-effective-sales/) — Keenan (Sales Hacker podcast) ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/how-to-move-from-feature-selling-to-gap-selling-keenan-sales-hacker.md)) | Podcast | 50 min | The Gap Selling author on problem-centric vs. product-centric selling — the five-section discovery structure and the gap between current and future state as the unit of diagnosis. |
+| [The Ultimate Discovery Call Framework (Used by Top 1% Sellers)](https://www.youtube.com/watch?v=y0H6G7toc9s) — 30MPC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/ultimate-discovery-call-framework-top-1-sellers-30mpc.md)) | Video | 56 min | A single complete framework from the 30MPC hosts: the 5/20/5 call structure, the PPO agenda, and the four-layer discovery tree from situation to business impact. |
 
 ### Go deeper
 
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
+| [Neil Rackham on the research behind SPIN](https://www.youtube.com/watch?v=t24zBKSA3fY) — Neil Rackham ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/neil-rackham-research-behind-spin-selling.md)) | Video | ~10 min | Rackham himself, short and free, on the 35,000-call research program that produced SPIN — the evidence behind the method. |
 | [*SPIN Selling*](https://www.amazon.com/SPIN-Selling-Neil-Rackham/dp/0070511136) — Neil Rackham | Book | ~6 hrs | The research-backed questioning methodology, based on analysis of 35,000+ sales calls. The Situation→Problem→Implication→Need-payoff spine is the backbone of discovery that doesn't feel like an audit [6]. |
 | [Huthwaite blog](https://www.huthwaiteinternational.com/blog/author/neil-rackham) — Neil Rackham | Articles | 2 min each | The SPIN author still publishing on the research behind the method, the origins of the acronym, and why questioning skills endure. Free, from the source. |
 | [The Challenger Sale](https://www.penguinrandomhouse.com/books/192693/) — Dixon & Adamson | Book | ~6 hrs | Adds teaching to questioning: bring a hypothesis about their business, use discovery to test it rather than to survey. |

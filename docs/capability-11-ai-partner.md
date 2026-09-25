@@ -13,7 +13,7 @@
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
 | [MEDDPICC Explained: A Practical Guide](https://www.closingfoundry.com/insights/meddpicc-explained-a-practical-guide-for-founders-sales-leaders) — Closing Foundry | Article | 20 min | Includes the argument that LLMs can remove the deal-inspection burden — scoring every deal, not just the biggest bets [3]. |
-| [30 Minutes to President's Club](https://www.30mpc.com/) | Podcast | 30 min/ep | The tactics are the material AI works on: pick an episode, role-play it with an AI in the prospect's seat, then debrief. |
+| [How I Use Claude to Book 4–6 Meetings Every Week](https://www.youtube.com/watch?v=FiSwFnWMc8o) — 30MPC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/claude-intelligence-layer-book-meetings-30mpc.md)) | Video | 56 min | The canonical AI-seller episode: build an AI "Intelligence Layer" from CRM data to surface hot accounts and book 4–6 meetings a week. |
 
 ### Go deeper
 

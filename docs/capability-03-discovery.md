@@ -12,7 +12,6 @@
 
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
-| [30 Minutes to President's Club — discovery episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Word-for-word question phrasings from top sellers. The fastest way to hear what good discovery sounds like. |
 | [How to Move from Feature Selling to Gap Selling](https://gtmnow.com/gap-selling-effective-sales/) — Keenan (Sales Hacker podcast) ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/how-to-move-from-feature-selling-to-gap-selling-keenan-sales-hacker.md)) | Podcast | 50 min | The Gap Selling author on problem-centric vs. product-centric selling — the five-section discovery structure and the gap between current and future state as the unit of diagnosis. |
 | [The Ultimate Discovery Call Framework (Used by Top 1% Sellers)](https://www.youtube.com/watch?v=y0H6G7toc9s) — 30MPC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/ultimate-discovery-call-framework-top-1-sellers-30mpc.md)) | Video | 56 min | A single complete framework from the 30MPC hosts: the 5/20/5 call structure, the PPO agenda, and the four-layer discovery tree from situation to business impact. |
 
@@ -26,7 +25,6 @@
 | [The Challenger Sale](https://www.penguinrandomhouse.com/books/192693/) — Dixon & Adamson | Book | ~6 hrs | Adds teaching to questioning: bring a hypothesis about their business, use discovery to test it rather than to survey. |
 | [Gong Labs](https://www.gong.io/labs/) | Data essays | 10 min each | Evidence on question counts, talk ratios, and what distinguishes winning discovery calls. |
 | [First Round Review sales essays](https://review.firstround.com/) | Articles | 15 min each | Founder-led discovery stories: what to ask, what to record, and how early conversations shape the offer itself. |
-| [30 Minutes to President's Club — discovery episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Word-for-word question phrasings from top sellers; browse for the deal type you face. |
 
 ### Practice This
 

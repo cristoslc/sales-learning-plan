@@ -22,7 +22,7 @@
 | [*MEDDICC*](https://meddicc.com/meddicc-the-book) — Andy Whyte | Book | ~4 hrs | The Champion and Economic Buyer letters, explained by a practitioner, with the behaviors that separate real champions from friendly contacts [2]. |
 | [MEDDPICC: the complete guide](https://www.closingfoundry.com/meddpicc) — Closing Foundry | Guide hub | 30 min | Element definitions plus deal-health scorecard; the buyer-stakeholder mapping drill lives here. |
 | [*Founding Sales* — stakeholder chapters](https://www.foundingsales.com/) — Pete Kazanjy | Book chapters (free online) | ~2 hrs | Mapping buying committees when you're the one in the seat, including how to ask for access to power without burning the contact. |
-| [30 Minutes to President's Club — multi-threading episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Tactics for building coverage across a buying committee when your single contact is not enough. |
+| [Multithreading Masterclass: The Secret to Selling Deals at Power](https://www.30mpc.com/episodes/multithreading-masterclass-the-secret-to-selling-deals-at-power) — 30MPC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/multithreading-masterclass-30mpc.md)) | Video | 47 min | The single canonical multi-threading episode on building buying-committee coverage and selling at power. |
 
 ### Practice This
 

@@ -20,7 +20,7 @@
 | Resource | Format | Time | What it adds |
 |----------|--------|------|-------------|
 | [*Founding Sales*](https://www.foundingsales.com/) — Pete Kazanjy | Book (free online) | ~6 hrs | The early-stage outbound bible, free online (registration), searchable chapter by chapter. If you only read two chapters, make them list-building and first-touch messaging. |
-| [30 Minutes to President's Club — prospecting episodes](https://www.30mpc.com/) | Podcast | 30 min/ep | Hyper-tactical cold-call and cold-email breakdowns; the formats are immediately stealable. |
+| [Cold Call Masterclass: The Perfect Script (With LIVE Calls to Prove It)](https://www.youtube.com/watch?v=2vivv2HeiBU) — 30MPC ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/cold-call-masterclass-perfect-script-30mpc.md)) | Video | 51 min | The 30MPC hosts' exact cold-call script (a 1-in-3 booking rate) proven live: the "heard the name tossed around" opener, context-first lines, and the Mr. Miyagi objection method. |
 | [First Round Review sales essays](https://review.firstround.com/) — First Round Review | Article collection | 15 min each | Repeated, well-edited coverage of the founder-as-salesperson motion, including when to keep it and when to hand off. |
 | [Gong Labs research](https://www.gong.io/labs/) — Gong | Data essays | 10 min each | What actually correlates with replies and wins across millions of recorded interactions — message structure and talk-ratio findings. Useful for de-guessing. |
 | *Fanatical Prospecting* — Jeb Blount | Book | ~6 hrs | Pipeline discipline and the psychology of consistent daily outreach, when volume is your problem rather than messaging. |

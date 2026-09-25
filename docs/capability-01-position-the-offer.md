@@ -13,7 +13,7 @@
 | Resource | Format | Time | Why this one |
 |----------|--------|------|-------------|
 | [Building a Sales Story That Wins](https://saasiest.com/april-dunford-building-a-sales-story-that-wins/) — April Dunford | Talk recap | 10 min | Compresses the sales-narrative argument: positioning drives the pitch, value before features, "why pick us over the alternatives." The fastest taste of the Dunford method. |
-| [Positioning to Unlock Growth](https://portfolioresources.summitpartners.com/post/positioning-with-april-dunford) — April Dunford | Webinar | 60 min | Dunford herself on the signs of a positioning problem, the five components of effective positioning, and translating positioning into a sales pitch, with Q&A. |
+| [Positioning to Unlock Growth](https://www.youtube.com/watch?v=yTQaiForo6k) — April Dunford ([summary](https://github.com/cristoslc/sales-learning-plan/blob/main/docs/summaries/positioning-to-unlock-growth-april-dunford.md)) | Video | 37 min | Dunford herself on the signs of a positioning problem, the five components of effective positioning, and translating positioning into a sales pitch. |
 
 ### Go deeper
 
